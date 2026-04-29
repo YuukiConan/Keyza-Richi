@@ -1,0 +1,226 @@
+
+.crystal-blue {
+    --primary-color: rgb(39, 163, 245);
+    --secondary-color: rgb(36, 128, 214);
+    --tertiary-color: rgb(10, 83, 167);
+    --background-color: rgb(250, 252, 255);
+    --bg-color-value: 250, 252, 255;
+    --backdrop-color: rgba(var(--bg-color-value), 0.95);
+    --surface-color: rgb(249, 249, 253);
+    --on-surface-color: rgb(100, 100, 100);
+    --gradient-color: linear-gradient(90deg, rgba(110, 174, 233, 0.822) 0%, rgb(125, 160, 255) 50%, rgb(233, 241, 250) 100%);
+    --bg-icon-color: rgba(77, 127, 219, 0.151);
+    --text-color: rgb(16, 18, 20);
+}
+
+.crystal-blue .people-banner,
+.crystal-blue .adaptive-logo {
+    filter: hue-rotate(180deg);
+}
+
+.crystal-blue .people-banner:has(img) {
+    filter: none !important;
+}
+
+body.dark-mode.crystal-blue,
+body.dark-mode.crystal-blue :root {
+    --background-color: rgb(29, 29, 31);
+    --surface-color: rgb(34, 35, 37);
+    --bg-color-value: 29, 29, 31;
+    --on-surface-color: rgb(100, 100, 100);
+    --text-color: white;
+}
+
+.amber-red {
+    --primary-color: rgb(219, 85, 68);
+    --secondary-color: rgb(179, 91, 91);
+    --tertiary-color: rgb(165, 74, 74);
+    --background-color: rgb(255, 251, 251);
+    --bg-color-value: 255, 251, 251;
+    --backdrop-color: rgba(var(--bg-color-value), 0.95);
+    --surface-color: rgb(255, 248, 248);
+    --on-surface-color: rgb(100, 100, 100);
+    --light-surface-color: rgb(255, 250, 250);
+    --gradient-color: linear-gradient(90deg, rgba(233, 110, 110, 0.822) 0%, rgb(255, 125, 125) 50%, rgb(250, 233, 233) 100%);
+    --bg-icon-color: rgba(216, 129, 117, 0.151);
+    --text-color: rgb(36, 7, 7);
+}
+
+.amber-red .people-banner,
+.amber-red .adaptive-logo {
+    filter: hue-rotate(-20deg);
+}
+
+.amber-red .people-banner:has(img) {
+    filter: none !important;
+}
+
+body.dark-mode.amber-red,
+body.dark-mode.amber-red :root {
+    --background-color: rgb(12, 5, 5);
+    --surface-color: rgb(22, 5, 5);
+    --on-surface-color: rgb(100, 100, 100);
+    --light-surface-color: rgb(40, 30, 30);
+    --bg-color-value: 27, 21, 21;
+    --text-color: white;
+}
+
+.nature-green {
+    --primary-color: rgb(18, 170, 12);
+    --secondary-color: rgb(49, 100, 36);
+    --tertiary-color: rgb(62, 90, 45);
+    --background-color: rgb(250, 253, 250);
+    --bg-color-value: 250, 253, 250;
+    --backdrop-color: rgba(var(--bg-color-value), 0.95);
+    --surface-color: rgb(250, 253, 249);
+    --on-surface-color: rgb(100, 100, 100);
+    --gradient-color: linear-gradient(90deg, rgba(110, 233, 116, 0.822) 0%, rgb(188, 255, 125) 50%, rgb(233, 250, 236) 100%);
+    --bg-icon-color: rgba(90, 194, 65, 0.151);
+    --text-color: rgb(13, 19, 11);
+}
+
+.nature-green .people-banner,
+.nature-green .adaptive-logo {
+    filter: hue-rotate(80deg);
+}
+
+.nature-green .people-banner:has(img) {
+    filter: none !important;
+}
+
+body.dark-mode.nature-green,
+body.dark-mode.nature-green :root {
+    --background-color: rgb(13, 17, 14);
+    --surface-color: rgb(13, 19, 13);
+    --on-surface-color: rgb(100, 100, 100);
+    --bg-color-value: 13, 17, 14;
+    --text-color: white;
+}
+
+.choco-milk {
+    --primary-color: rgb(199, 125, 64);
+    --secondary-color: rgb(184, 133, 76);
+    --tertiary-color: rgb(173, 148, 119);
+    --background-color: rgb(255, 250, 245);
+    --bg-color-value: 255, 250, 245;
+    --backdrop-color: rgba(var(--bg-color-value), 0.95);
+    --surface-color: rgb(253, 245, 230);
+    --on-surface-color: rgb(100, 100, 100);
+    --gradient-color: linear-gradient(90deg, rgba(233, 169, 110, 0.822) 0%, rgb(255, 188, 125) 50%, rgb(250, 245, 233) 100%);
+    --bg-icon-color: rgba(219, 181, 77, 0.151);
+    --text-color: rgb(56, 40, 4);
+}
+
+body.dark-mode.choco-milk,
+body.dark-mode.choco-milk :root {
+    --background-color: rgb(14, 12, 11);
+    --surface-color: rgb(19, 15, 10);
+    --bg-color-value: 14, 12, 11;
+    --on-surface-color: rgb(100, 100, 100);
+    --text-color: white;
+}
+
+.choco-milk .people-banner,
+.choco-milk .adaptive-logo {
+    filter: hue-rotate(30deg);
+}
+
+.choco-milk .people-banner:has(img) {
+    filter: none !important;
+}
+
+.purple-ruby {
+    --primary-color: rgb(157, 74, 224);
+    --secondary-color: rgb(126, 76, 184);
+    --tertiary-color: rgb(129, 90, 179);
+    --background-color: rgb(252, 245, 255);
+    --bg-color-value: 252, 245, 255;
+    --backdrop-color: rgba(var(--bg-color-value), 0.95);
+    --surface-color: rgb(250, 242, 255);
+    --on-surface-color: rgb(100, 100, 100);
+    --gradient-color: linear-gradient(90deg, rgba(157, 110, 233, 0.822) 0%, rgb(181, 125, 255) 50%, rgb(238, 233, 250) 100%);
+    --conic-gradient: conic-gradient(from var(--angle), rgb(157, 74, 224), rgb(126, 76, 184), rgb(221, 221, 221));
+    --bg-icon-color: rgba(147, 117, 216, 0.151);
+    --text-color: rgb(20, 3, 48);
+}
+
+body.dark-mode.purple-ruby,
+body.dark-mode.purple-ruby :root {
+    --background-color: rgb(17, 15, 19);
+    --surface-color: rgb(28, 21, 37);
+    --bg-color-value: 17, 15, 19;
+    --on-surface-color: rgb(100, 100, 100);
+    --text-color: white;
+}
+
+.purple-ruby .people-banner,
+.purple-ruby .adaptive-logo {
+    filter: hue-rotate(260deg);
+}
+
+.purple-ruby .people-banner:has(img) {
+    filter: none !important;
+}
+
+// For panel
+
+.panel-image.amber-red .primary {
+    background-color: rgb(199, 80, 64);
+}
+
+.panel-image.amber-red .secondary {
+    background-color: rgb(179, 91, 91);
+}
+
+.panel-image.amber-red .tertiary {
+    background-color: rgb(165, 74, 74);
+}
+
+
+.panel-image.nature-green .primary {
+    background-color: rgb(15, 136, 11);
+}
+
+.panel-image.nature-green .secondary {
+    background-color: rgb(49, 100, 36);
+}
+
+.panel-image.nature-green .tertiary {
+    background-color: rgb(62, 90, 45);
+}
+
+.panel-image.crystal-blue .primary {
+    background-color: rgb(39, 163, 245);
+}
+
+.panel-image.crystal-blue .secondary {
+    background-color: rgb(36, 128, 214);
+}
+
+.panel-image.crystal-blue .tertiary {
+    background-color: rgb(10, 83, 167);
+}
+
+.panel-image.purple-ruby .primary {
+    background-color: rgb(157, 74, 224);
+}
+
+.panel-image.purple-ruby .secondary {
+    background-color: rgb(126, 76, 184);
+}
+
+.panel-image.purple-ruby .tertiary {
+    background-color: rgb(129, 90, 179);
+}
+
+.panel-image.choco-milk .primary {
+    background-color: rgb(199, 125, 64);
+}
+
+.panel-image.choco-milk .secondary {
+    background-color: rgb(184, 133, 76);
+}
+
+.panel-image.choco-milk .tertiary {
+    background-color: rgb(173, 148, 119);
+}

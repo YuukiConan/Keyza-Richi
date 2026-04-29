@@ -1,0 +1,107 @@
+body {
+    position: relative;
+    top: 0;
+    height: 100%;
+    overflow-y: scroll !important;
+}
+a {
+    color: rgb(129, 129, 129) !important;
+    transition: .4s;
+}
+a:hover, a:focus { color: rgb(253, 138, 71) !important }
+a:active { color: rgb(207, 122, 73) !important }
+a:visited { color: rgb(255, 116, 35) }
+.login-container {
+    width: 100vw;
+    height: 100%;
+    overflow-y: scroll;
+}
+.something {
+    position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    padding-bottom: 5em;
+}
+.login-header {
+    padding-top: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.login-header .logo {
+    height: 70px;
+}
+form {
+    width: 400px;
+    padding: 20px 60px;
+    border-radius: 20px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.form-container {
+    margin: 10px 0 20px 0;
+}
+.form-footer {
+    margin: 20px 0 0 0;
+    text-align: center;
+}
+
+.provider {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0 28px 0;
+}
+
+.provider .btn {
+    border-radius: 50px;
+    min-width: 50px; height: 50px;
+}
+
+.provider .btn i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.other {
+    width: 100%;
+    text-align: center;
+    color: rgb(129, 129, 129);
+}
+
+input[type=text], input[type=email], input[type=password] {
+    background-color: transparent;
+    display: block;
+    color: black;
+    box-sizing: border-box;
+    border-radius: 0 !important;
+    width: 100% !important;
+    font-size: 14px;
+    margin: 8px 0 18px 0;
+    padding-left: 0px !important;
+    outline: none;
+    border: none !important;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.2) !important;
+    transition: border-bottom .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+:is(input[type=text], input[type=email], input[type=password]):focus {
+    border: none !important;
+    border-bottom: 1px solid var(--primary-color) !important;
+}
+
+label {
+    position: relative;
+    top: -1px;
+    font-weight: 600;
+    padding-top: 10px;
+    font-size: 16px;
+    pointer-events: none;
+    text-align: left;
+}

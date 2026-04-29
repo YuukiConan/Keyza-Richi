@@ -1,0 +1,294 @@
+[
+    {
+        "name": "Yuuki Conan",
+        "description": "Former Japanese-Indonesian soccer player • programmer • lead developer at Keyza Richi.",
+        "nickname": "Yuuki",
+        "image": "./assets/logo/YuukiC.com_new logo_big.webp",
+        "id": "yuuki",
+        "like_count": 0,
+        "comment_count": 0
+    },
+    {
+        "name": "Keyza Medina Richi Sherlya Fanda",
+        "description": "Keyza Richi is a main character of this website who will guide you to make your interior design more beautiful and creative. <br><br>Richi is a talented and creative individual who has a passion for interior design and fashion. With her unique sense of style and eye for detail, Richi has become a beloved figure in the world of design, inspiring others with her innovative ideas and captivating content. As the main character of keyzarichi.org, Richi serves as a guide and source of inspiration for visitors, helping them to explore their own creativity and discover new ways to express themselves through design.",
+        "nickname": "Richi",
+        "image": "./assets/image/keyza_richi/richi_4.webp",
+        "id": "richi",
+        "like_count": 0,
+        "comment_count": 0
+    },
+    {
+        "name": "Jessica Noleen Alka",
+        "description": "Music producer and member of keyzarichi.org in the fashion industry.",
+        "nickname": "Jessica",
+        "image": "./assets/image/jessica_noleen/Jessica.webp",
+        "id": "jessica",
+        "aliases": "jessie m wolen",
+        "like_count": 0,
+        "comment_count": 0
+    },
+    {
+        "name": "Jessica Anastasya Oktafiana",
+        "description": "The Student Council Coordinator <br> <br> Along with Richi, Jessy is also a member of the Scouts and Pasbhirawa at SMK Canda Bhirawa Pare. She is the originator of the main idea that is loved on this website: PeopleCard. <br><br>Jessy has a close relationship with Richi, often collaborating on various projects and events. Her creativity and organizational skills have made her an invaluable member of the team, contributing to the success of keyzarichi.org and its engaging content.",
+        "nickname": "Jessy",
+        "image": "./assets/image/jessica_anastasya/jessica_anastasya.webp",
+        "id": "anastasya",
+        "instagram": [
+            "jeesxy_"
+        ],
+        "tiktok": "",
+        "like_count": 0,
+        "comment_count": 0
+        
+    },
+    {
+        "name": "Yosia Adria Pratama",
+        "description": "Mentor Forum Anak Kab. Kediri &bull; web developer<br><br>Yosia sering berkolaborasi dengan Richi di acara tertentu, seperti sebagai MC MPLS atau fashion show.<br><br>Yosia is a talented web developer and mentor for the Forum Anak Kab. Kediri, where he provides guidance and support to young people in the community. He has a passion for technology and is dedicated to helping others learn and grow in the field of web development. Yosia's expertise and mentorship have made him a valuable asset to the Keyza Richi team, where he contributes his skills to help create an engaging and user-friendly website.",
+        "nickname": "Yosia",
+        "id": "yosia",
+        "image": "./assets/image/yosia/yosia.webp",
+        "instagram": [
+            "yosiaapratama_"
+        ],
+        "tiktok": "",
+        "like_count": 0,
+        "comment_count": 0
+    },
+    {
+        "name": "Nathania Anneta Wayak Payong",
+        "description": "Yuuki’s new assistant developer • actress • model <br><br>Nia often helps Yuuki test new features in Keyza Richi before they’re released to the public. <br><br>In addition to her work as a developer, Nia is also an actress and model, known for her captivating performances and stunning looks. With her unique blend of technical expertise and creative talent, Nia is a valuable asset to the Keyza Richi team and a rising star in the entertainment industry.",
+        "nickname": "Nia &bull; Neta",
+        "id": "anneta",
+        "image": "./assets/image/nathania_anneta/Nia_avatar.webp",
+        "aliases": "It's Anneta!",
+        "instagram": [
+            "niaapayy",
+            "itswayyp"
+        ],
+        "tiktok": "",
+        "like_count": 0,
+        "comment_count": 0
+    },
+    {
+        "name": "Angelina Petra",
+        "description": "Influencer &bull; model. An older brother of Nathania Anneta. She is 8–9 years older than Nia, who has made a name for herself in the fashion world with her elegant design",
+        "nickname": "Angel",
+        "image": "./assets/image/angelina_petra/angelinapetraa_1764807506718.webp",
+        "id": "petra",
+        "aliases": "",
+        "like_count": 0,
+        "comment_count": 0
+    },
+    {
+        "name": "Titus Petra Mesias",
+        "description": "Student Council Member <br><br>Titus occasionally served as an MC alongside Richi during the mid-semester futsal class meet.",
+        "nickname": "Titus",
+        "image": "./assets/image/titus/titus.jpg",
+        "id": "titus",
+        "like_count": 0,
+        "comment_count": 0
+    },
+    {
+        "name": "Rikki Tantriya Sulaiman",
+        "description": "A student council member in the same grade as Richi. She seems to be a girl who’s rarely seen around with hidden potential.",
+        "nickname": "Rikki",
+        "image": "./assets/image/rikki/rikki.webp",
+        "id": "rikki",
+        "like_count": 0,
+        "comment_count": 0
+    },
+    {
+        "name": "Zepta Ramadhan",
+        "description": "Designer",
+        "nickname": "Zepta",
+        "id": "zepta",
+        "like_count": 0,
+        "comment_count": 0
+    },
+    {
+        "name": "Fraocta Angela Rossa",
+        "description": "Model <br><br>Rossa is a talented and photogenic model who won the Putri Kebaya title in 2022, walked the runway in Kediri, and is photogenic",
+        "nickname": "Rossa",
+        "image": "./assets/image/angela_rossa/rossa.jpg",
+        "id": "rossa",
+        "instagram": [
+            "rossaafa.10"
+        ],
+        "like_count": 0,
+        "comment_count": 0
+    },
+    {
+        "name": "Nelvino Harven",
+        "description": "A member of tech.xyz who contributes to keyzarichi.org with graphic designs for TikTok apps and videos.",
+        "nickname": "Vino",
+        "image": "./assets/image/suep/sueb.jpg",
+        "id": "vino",
+        "instagram": [
+            "christoph_vin"
+        ],
+        "like_count": 0,
+        "comment_count": 0
+    },
+    {
+        "name": "Alenta Chelsy Ramadhani",
+        "description": "Student Council members working with Richi in the graphics department. <br><br>Chelsy is known for her analytical and structured approach to design, often creating visually stunning graphics that are both aesthetically pleasing and highly functional. With her keen eye for detail and her ability to think outside the box. <br><br>In addition, Chelsy has a close friendship with Jessica Anastasya (Jessy), often meet up and make some experiments together. Her creativity and dedication to her craft have made her an invaluable member of the keyzarichi.org team, where she contributes her unique perspective and creative energy to help bring the website to life with visually stunning graphics and captivating content.",
+        "nickname": "Chelsy",
+        "image": "./assets/image/OSIS/alenta_chelsy.webp",
+        "id": "chelsy",
+        "instagram": [
+            "__ccchlsyy"
+        ],
+        "like_count": 0,
+        "comment_count": 0
+    },
+    {
+        "name": "Ercila Mai Asherayuku",
+        "description": "Graphic designer <br> <br>An expert in drawing, Ercila won first place in the SDN Pare 2 drawing contest in 2022. Some things are meant to be felt; she's express it deeply, quietly, and completely. <br><br>Ercila was included in keyzarichi.org as a Storyteller member because of her love story with Yuuki, a main developer of Keyza Richi, which is often associated with the love story between Pisces (Yuuki) and Scorpio (Ercila); described as a love story that is deep, intense, and full of emotional depth. Ercila's presence in the team adds a unique perspective and creative energy that helps bring the website to life with visually stunning graphics and captivating content. <br><br>In addition to her work as a graphic designer, Ercila is also known for her quiet and introspective nature, often expressing herself through her art in a way that resonates deeply with others. Her talent and creativity have made her an invaluable member of the keyzarichi.org team, where she contributes her unique perspective and creative energy to help bring the website to life with visually stunning graphics and captivating content.",
+        "nickname": "Ercila &bull; Cila",
+        "image": "./assets/image/ercila/ercila.webp",
+        "id": "ercila",
+        "instagram": [
+            "wa0_fless"
+        ],
+        "like_count": 0,
+        "comment_count": 0
+    },
+    {
+        "name": "Deandra Aliena Putranto",
+        "description": "Ercila’s trusted companion in the world of imagination; Dea helps Ercila transform art into unparalleled creativity. Just enough to keep things interesting. <br><br>Deandra was included in keyzarichi.org as a Storyteller member because she has a close friendship with Ercila, and also a 'mediator' in the relationship between Ercila and Yuuki. Despite their problems, Deandra is always there to support and encourage Ercila, helping her navigate the complexities of her relationship with Yuuki and providing a source of comfort and understanding. <br><br>In other side, Deandra is also a talented artist in her own right, with a unique perspective and creative energy that helps bring the website to life with visually stunning graphics and captivating content.",
+        "nickname": "Deandra",
+        "image": "./assets/image/deandra/dea.webp",
+        "id": "deandra",
+        "instagram": [
+            "who_itsme3"
+        ],
+        "like_count": 0,
+        "comment_count": 0
+    },
+    {
+        "name": "Ally Li",
+        "description": "A college student and contributor to Keyza Richi who is passionate about UX design and web development. <br><br>She now lives in Boston, a city in New York, United States, and focuses on the global interactive coding community, Codédex.",
+        "nickname": "Ally",
+        "aliases": "Allison",
+        "image": "./assets/image/ally/Allison.webp",
+        "id": "allison",
+        "instagram": [
+            "girlearningtocode"
+        ],
+        "like_count": 0,
+        "comment_count": 0
+    }, {
+        "name": "Maria Chrisprilita Catrine",
+        "description": "Members of keyzarichi.org who showcase their talent and creativity in the fields of fashion and makeup. <br><br>In her personal life, Catrine is known for her private nature, often keeping her personal life away from the public eye. However, her talent and creativity in fashion and makeup have made her a valuable member of the keyzarichi.org team, where she contributes her unique perspective and creative energy to help bring the website to life with visually stunning graphics and captivating content.",
+        "nickname": "Catrine",
+        "image": "./assets/image/maria_catrine/catrine.webp",
+        "aliases": "",
+        "id": "catrine",
+        "instagram": [
+            
+        ],
+        "like_count": 0,
+        "comment_count": 0
+    }
+    , {
+        "name": "Hilda Ifantri Natalia",
+        "description": "Members of keyzarichi.org who has courage action about social issues, interior design, and teology. <br><br>Hilda is a passionate advocate for social issues, using her voice and platform to raise awareness and promote positive change in her community. In addition to her activism, Hilda has a keen interest in interior design, often sharing her creative ideas and tips for creating beautiful and functional living spaces. With her unique blend of social consciousness and design expertise.",
+        "nickname": "Hilda",
+        "aliases": "",
+        "image": "./assets/image/hilda.webp",
+        "id": "hilda",
+        "instagram": [
+            
+        ],
+        "like_count": 0
+    }
+    , {
+        "name": "M. Asfar Nur Arofi",
+        "description": "A mechanical engineering student and contributor to Keyza Richi who is passionate about robotics, machine design, and automation. <br><br>Asfar is a talented and dedicated student who has a passion for robotics, machine design, and automation. With his technical expertise and creative problem-solving skills, Asfar contributes to keyzarichi.org by sharing his knowledge and insights on these topics, helping to inspire and educate others in the field of engineering.... <br><br>More story about Asfar is still being written, but his dedication and passion for engineering make him a valuable member of the keyzarichi.org team and a promising future in the field of robotics and automation.",
+        "nickname": "Asfar",
+        "aliases": "",
+        "image": "./assets/image/asfar.webp",
+        "id": "asfar",
+        "instagram": [
+            
+        ],
+        "like_count": 0
+    },
+    {
+        "name": "Keisya Ayu Audora Salsabela",
+        "description": "A badminton player and developer at keyzarichi.org. Keisya is often described as a “woman with hidden strength” because she works entirely behind the scenes on software design. <br><br>Several months ago, Keisya was temporarily absent from the team due to her focus on badminton, but she has since returned to contribute her skills and expertise to the development of keyzarichi.org. With her dedication and hard work, Keisya continues to be an invaluable member of the team, helping to create a better user experience for everyone who visits the website.",
+        "nickname": "Keke &bull; Keisya",
+        "image": "./assets/image/keisya_ayu/Keke_1.webp",
+        "id": "keke"
+    }, {
+        "name": "Natalia Jessica Lisianto",
+        "description": "A mechanical engineering student and contributor to Keyza Richi who is passionate about robotics, machine design, and automation.",
+        "nickname": "Natalia",
+        "aliases": "",
+        "image": "./assets/image/member_avatar/natalia_jessica.webp",
+        "id": "natalia",
+        "instagram": [
+            
+        ],
+        "like_count": 0
+    }, {
+        "name": "Crescentia Flos C. P. S.",
+        "description": "Ercila’s trusted companion in the world of imagination; Flos helps Ercila transform art into unparalleled creativity. <br><br>More about Flos is coming soon... but one thing is for sure, Flos is a talented artist in her own right, with a unique perspective and creative energy that helps bring the website to life with visually stunning graphics and captivating content.",
+        "nickname": "Flos",
+        "aliases": "",
+        "image": "./assets/image/member_avatar/flos.webp",
+        "id": "flos",
+        "instagram": [
+            
+        ],
+        "like_count": 0
+    }
+    , {
+        "name": "Lilis Ambarwati",
+        "description": "Amberly is an influencer or content creator who has an adventurous spirit and loves the world of photography and personal career. <br><br>Amberly's passion for photography and content creation has led her to explore various creative avenues, sharing her unique perspective and captivating content with her audience. With her adventurous spirit and love for storytelling, Amberly continues to inspire others through her work, making her a valuable member of the keyzarichi.org team.",
+        "nickname": "Amberly &bull; Ambar",
+        "aliases": "",
+        "image": "./assets/image/member_avatar/ambar.webp",
+        "id": "amberly",
+        "instagram": [
+            
+        ],
+        "like_count": 0
+    }
+    , {
+        "name": "Aulia Bikrun Fayha",
+        "description": "Ercila's best friend. <br><br>The story about Fayha is still being written... we just make she being mysterious in this website.",
+        "nickname": "Fayha",
+        "aliases": "",
+        "image": "",
+        "id": "fayha",
+        "instagram": [
+            
+        ],
+        "like_count": 0
+    }
+    , {
+        "name": "Fini Charisa",
+        "description": "Fini Charisa is an UI/UX designer, content creator, and contributor to keyzarichi.org who is completely dedicated to creating a better user experience for everyone. <br>With her keen eye for design and user-centric approach, Fini is an invaluable asset to the team, ensuring that every aspect of the website is not only visually appealing but also intuitive and user-friendly. <br> <br>In 2025, Fini was invited by Google Indonesia to speak at the Google I/O Extended event in Jakarta, where she shared her insights on UI/UX design and her experience working as a UI/UX designer. Her dedication to creating a better user experience has made her an integral part of the team and a respected figure in the design community.",
+        "nickname": "Fini",
+        "aliases": "",
+        "image": "./assets/image/member_avatar/fini_charisa.webp",
+        "id": "fini",
+        "instagram": [
+            
+        ],
+        "like_count": 0
+    }
+    , {
+        "name": "Aqueena Rosyidania Santoso",
+        "description": "Aqueena is a talented fashion designer and content creator who contributes to keyzarichi.org with her creative designs and engaging content. With her passion for art and design, Aqueena helps bring the website to life with visually stunning graphics and captivating content that resonates with the audience. <br><br>In 2025, Aqueena won the prestigious Putri Batik Kab. Kediri at first place, showcasing her exceptional talent and creativity in the world of fashion design. Her dedication to her craft and her ability to create unique and beautiful designs have made her an invaluable member of the keyzarichi.org team and a rising star in the fashion industry.",
+        "nickname": "Aqueena",
+        "aliases": "",
+        "image": "./assets/image/member_avatar/aqueena.webp",
+        "id": "aqueena",
+        "instagram": [
+            
+        ],
+        "like_count": 0
+    }
+]

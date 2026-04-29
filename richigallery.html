@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+    <meta name="theme-color" content="#F57327" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap">
+
+    <!-- ================= CSP ================= -->
+    <meta http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src
+          'self'
+          'unsafe-inline'
+          https:;
+        style-src
+          'self'
+          'unsafe-inline'
+          https:;
+        font-src
+          'self'
+          https:;
+        img-src
+          'self'
+          data:
+          https:;
+        object-src 'none';
+        base-uri 'none';
+      ">
+
+
+
+    <!-- ================= PERFORMANCE ================= -->
+     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.20/dist/lenis.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="./Rave/css/KeyzaRichi-rave_core.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+
+    <!-- ================= STYLES ================= -->
+    <link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.0.8/css/line.min.css" />
+    <link rel="stylesheet" href="./Rave/css/KeyzaRichi-rave_core.css">
+    <link rel="stylesheet" href="./styles_new.css" />
+
+    <!-- ================= SCRIPTS (ES MODULES) ================= -->
+    <script type="module" nonce="random123" src="./Rave/js/Rave_header.js"></script>
+    <script type="module" nonce="random123" src="./Rave/js/Rave.js"></script>
+    <script type="module" nonce="random123" src="./Rave/js/Rave_footer.js"></script>
+    
+    <script type="module" nonce="random123" src="./script.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.20/dist/lenis.min.js"></script> 
+    <script>
+        let imgs = document.querySelectorAll('.inline-caption img');
+        imgs.forEach(img => {
+            img.setAttribute('loading', 'lazy');
+            
+        })
+    </script>
+    <title></title>
+    
+</head>
+<body data-title="Galeri Richi">
+    <header></header>
+    <main id="scroll" data-scrollbar>
+        <section class="section">
+            <div class="section-header large">
+                <h1 class="section-title">Richi's Gallery</h1>
+            </div>
+            <div class="section-content">
+                <div class="inline-caption-title">
+                </div>
+                <div class="inline-caption-container">
+                    <div class="inline-caption">
+                        <div class="inline-caption-item">
+                            <h1>Richi Duta Batik 2025</h1>
+                            <img src="./assets/image/keyza_richi/richi_duta1.webp" alt="">
+                            <div class="inline-caption-desc">
+                                <p>Richi menjadi Duta Batik Kab. Kediri pada Desember 2025, sebuah peran penting dalam memperkenalkan budaya batik kepada masyarakat.</p>
+                                <h5 class="timestamp">1 Desember 2025 oleh <span class="accent">Richi</span></h5>
+                            </div>
+                        </div>
+                        <div class="inline-caption-item">
+                            <img src="./assets/image/keyza_richi/richi_duta2.webp" alt="">
+                            <div class="inline-caption-desc">
+                                <h1>2 November 2025</h1>
+                                <p>Hari ini Richi menjadi duta utama SMK Canda Bhirawa dalam acara wayang di Kecamatan Pare dengan batik sebagai motif utamanya</p>
+                                <h5 class="timestamp">28 November 2025 oleh <span class="accent">Richi</span></h5>
+                            </div>
+                        </div>
+                        <div class="inline-caption-item">
+                            <img src="./assets/image/keyza_richi/richiultah.webp" alt="">
+                            <div class="inline-caption-desc">
+                                <h1>Ulang tahun Richi - 3 Agustus 2025</h1>
+                                <p>Hari ini Richi berulang tahun! Semua anggota OSIS memberinya sebuah kotak donat dan mereka menuangkan tepung atau bedak ke tubuh Richi!</p>
+                                <h5 class="timestamp">20 September 2025 oleh <span class="accent">Richi</span> dan <span class="accent">@oscatuu</span></h5>
+                            </div>
+                        </div>
+                        <div class="inline-caption-item">
+                            <img src="./assets/image/keyza_richi/IMG_9334.webp" alt="">
+                            <div class="inline-caption-desc">
+                                <h1>Richi - MPLS CAWAMABA 2025</h1>
+                                <p>Richi, sebagai anggota OSIS menjadi MC pada acara Masa Pengenalan Lingkungan Sekolah (MPLS) dengan tema CAMAWABA 2025.</p>
+                                <h5 class="timestamp">5 September 2025 oleh <span class="accent">Richi</span></h5>
+                            </div>
+                        </div>
+                        <div class="inline-caption-item">
+                            <img src="./assets/image/keyza_richi/richiaward.jpg" alt="">
+                            <div class="inline-caption-desc">
+                                <h1>Richi sebagai nominator di Putra Putri Batik Kediri 2024</h1>
+                                <h5 class="timestamp">3 September 2025 oleh <span class="accent">Richi</span></h5>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+        </section>
+        <footer></footer>
+    </main>
+</body>
+</html>

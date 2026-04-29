@@ -1,0 +1,474 @@
+const url = './elements/header_new.html';
+
+fetch(url).then(response => response.text()).then(html => {
+    document.querySelector('header').innerHTML = html;
+
+    const elem = document.querySelector('.header-container'); 
+    const styles = getComputedStyle(document.documentElement);
+
+    if (elem.classList.contains('scrolled')) {
+        const background = styles.getPropertyValue('--background-color').trim();
+        if (background.startsWith('rgb')) {
+            const [r, g, b] = background.replace('rgb(', '').replace(')', '').split(',').map(c => c.trim());
+            document.documentElement.style.setProperty('--backdrop-color', `rgba(${r}, ${g}, ${b}, 0.95)`)
+            return;
+        }
+    }
+
+
+
+    function switchToDarkMode(toggleElement, checkbox, iconSelector) {
+        const toggle = document.querySelector(toggleElement);
+        const cbx = document.querySelector(checkbox);
+        const icon = document.querySelector(iconSelector);
+
+        const storage = localStorage.getItem('darkMode');
+
+        if (!toggleElement || !checkbox) return;
+
+        const isDark = storage !== null ? storage === "true" : window.matchMedia('prefers-color-scheme: dark').matches;
+
+        applyTheme(isDark);
+
+        toggle.addEventListener('click', () => {
+            const enabled = !document.documentElement.classList.contains('dark-mode');
+            applyTheme(enabled)
+            localStorage.setItem("darkMode", enabled);
+            cbx.checked = enabled;
+        })
+
+        function applyTheme(isEnabled) {
+            document.documentElement.setAttribute('data-theme', isEnabled ? 'dark' : 'light');
+            document.documentElement.classList.toggle("dark-mode", isEnabled); 
+
+            cbx.checked = isEnabled;
+
+            if (icon) {
+                icon.classList.toggle('uil-moon', isEnabled);
+                icon.classList.toggle('uil-sun', !isEnabled);
+            }
+        }
+
+
+    }
+
+    switchToDarkMode('#toggleTheme', '#cbx', '#themeIcon')
+
+}).finally(() => {
+    let element = document.querySelectorAll('[data-tooltip]');
+
+    const tooltip = document.createElement('div');
+    tooltip.classList.add('tooltip');
+    document.body.appendChild(tooltip);
+    
+    element.forEach(elem => {
+        elem.addEventListener('mouseenter', () => {
+            tooltip.textContent = elem.dataset.tooltip || 'No tooltip text';
+            tooltip.style.display = 'block';
+            tooltip.style.left = '-9999px';
+            tooltip.style.top = '-9999px';
+            
+            requestAnimationFrame(() => {
+                const rect = elem.getBoundingClientRect();
+                let left = rect.left + window.scrollX;
+                let top = rect.top + window.scrollY - tooltip.offsetHeight - 12;
+                left += (rect.width - tooltip.offsetWidth) / 2;
+                
+                if (top < window.scrollY) {
+                    top = rect.bottom + window.scrollY + 15;
+                }
+
+                if (left < window.scrollX) {
+                    left += rect.left + window.scrollX + 15;
+                } 
+    
+                const maxRight = window.scrollX + window.innerWidth;
+                const rightEdge = left + tooltip.offsetWidth;
+                
+                if (rightEdge > maxRight) {
+                    left = maxRight - tooltip.offsetWidth - 35;
+                }
+                tooltip.style.left = `${left}px`;
+                tooltip.style.top = `${top}px`
+
+            })
+
+
+        })
+
+        elem.addEventListener('mouseleave', () => {
+            tooltip.style.display = 'none';
+        });
+        
+        elem.addEventListener('touchmove', () => {
+            tooltip.style.display = "none";
+        })
+        
+    })
+
+
+    const btns = document.querySelectorAll('.navBtn');
+    const pops = document.querySelectorAll('.drop-down');
+
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const rect = btn.getBoundingClientRect();
+    
+            pops.forEach(pop => {
+                pop.style.left = rect.left + 'px';
+                pop.style.top = rect.bottom + 'px';
+
+                const popRect = pop.getBoundingClientRect();
+                if (popRect.right > window.innerWidth) {
+                    const right = rect.right - popRect.width;
+                    pop.style.left = right + 'px';
+                }
+            })
+        })
+
+    })
+
+    const searchBtns = document.querySelectorAll('.searchBtn');
+    let inputs = document.querySelectorAll('.search-text');
+    const prevText = document.querySelector('.prev-search-text');
+
+    searchBtns.forEach((searchBtn) => {
+        searchBtn.addEventListener('click', (event) => { 
+            event.preventDefault();
+
+            const hasEmpty = Array.from(inputs).filter(input => input.offsetParent !== null && !input.disabled && !input.classList.contains('disabled'))
+            const query = hasEmpty[0]?.value.trim() || '';
+
+            if (!query) {
+                alert('Please enter a search term');
+                return;
+            } 
+            window.location.href = `./result.html?search=${encodeURIComponent(query)}`;
+            prevText.innerHTML = query;
+            
+
+        });
+    })
+    const header = document.querySelector('header');
+    const navpane = document.querySelector('.nav-pane');
+    const btn = document.querySelector('.hamburger');
+    const overlay = document.querySelector('.overlay');
+    const menuButtons = document.querySelectorAll('.menuButton');
+    const brand = document.querySelector('.nav-pane .footer');
+    let isAnimating = false;
+    
+    function openNavPane() {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        overlay.classList.add('showOverlay');
+        brand.classList.remove('fade-out');
+        brand.classList.add('fade-in');
+        header.classList.add('no-blend');
+        
+        requestAnimationFrame(() => { 
+            navpane.style.animation = 'fadeInUpSmooth .9s cubic-bezier(0.475, 0.12, 0.165, 1)';
+            btn.classList.add('no-pointer');
+            navpane.classList.remove('hidden');
+            setTimeout(() => {
+                menuButtons.forEach((btn, index) => {
+                    setTimeout(() => {
+                        btn.classList.remove('fade-out');
+                        btn.classList.add('fade-in');
+                    }, index * 60);
+                    
+                })
+            }, 800)
+            navpane.addEventListener('animationend', () => {
+                if (navpane.style.animation.includes('fadeIn')) {
+                    btn.classList.add('active');
+                    btn.classList.remove('no-pointer');
+                    isAnimating = false;
+                }
+            });
+        });
+    }
+
+    function closeNavPane() {
+        if (isAnimating) return;
+        isAnimating = true;
+        btn.classList.add('no-pointer');
+        let delay = 460;
+        
+        if (window.innerWidth <= 600) {
+            delay = 0;
+        }
+        
+        requestAnimationFrame(() => {
+            btn.classList.remove('active');
+            setTimeout(() => {
+                navpane.style.animation = 'fadeOutUpSmooth .9s cubic-bezier(0.8, 0.292, 0.333, 1)';
+            }, delay);
+            
+            overlay.classList.remove('showOverlay');
+            brand.classList.add('fade-out');
+            
+            const items = Array.from(menuButtons);
+            items.reverse();
+            items.forEach((btn, index) => {
+                setTimeout(() => {
+                    btn.classList.remove('fade-in');
+                    btn.classList.add('fade-out');
+                    brand.classList.remove('fade-in');
+                    brand.classList.add('fade-out');
+                }, index * 120);
+                
+            })
+            
+            navpane.addEventListener('animationend', () => {
+                if (navpane.style.animation.includes('fadeOut')) {
+                    isAnimating = false;
+                    navpane.classList.add('hidden');
+                    header.classList.remove('no-blend');
+                    setTimeout(() => {
+                        btn.classList.remove('no-pointer');
+                    }, 1000) 
+                }
+            }, {once: true});
+        });
+        
+    }
+
+    function toggleNavPane() {
+        if (navpane.classList.contains('hidden')) {
+            openNavPane();
+        } else {
+            closeNavPane();
+        }
+    }
+
+    btn.addEventListener('click', toggleNavPane);
+    
+
+    
+    const body = document.body;
+
+    window.addEventListener('scroll', () => {
+        body.scrollTop > 100 || document.documentElement.scrollTop > 100 ? document.querySelector('.header-container').classList.add('scrolled') : document.querySelector('.header-container').classList.remove('scrolled');
+
+    })
+
+    const cart = header.querySelector('#cart');
+    const dialogCart = document.getElementById('cart-dialog');
+    const dialogClose= document.getElementById('close1');
+
+    cart.addEventListener('click', () => {
+        dialogCart.showModal();
+    })
+    
+    dialogClose.addEventListener('click', () => {
+        requestAnimationFrame(() => {
+            dialogCart.style.animation = 'fadeOut .8s cubic-bezier(0.075, 0.82, 0.165, 1)';
+            dialogCart.addEventListener('animationend', () => {
+                dialogCart.close();
+                dialogCart.style.animation = '';
+            }, {once: true});
+        })
+    })
+
+    function disableAnimation(checkbox) {
+    let isAnimating = true;
+    const cbx = document.querySelector(checkbox);
+    const navpane  = document.querySelector('header').querySelector('.nav-pane');
+    const isAnimEnabled = localStorage.getItem('anim-mode') === 'enabled';
+    
+
+    if (isAnimEnabled) {
+        document.body.classList.add('anim-disabled');
+        cbx.checked = true;
+        
+    }
+    else {
+        document.body.classList.remove('anim-disabled');
+        cbx.checked = false;
+        localStorage.setItem("anim-mode", "disabled");
+    }
+    
+    cbx.addEventListener('change', () => {
+        if (cbx.checked) {
+            document.body.classList.add('anim-disabled');
+            cbx.checked = true;
+            localStorage.setItem("anim-mode", "enabled");
+        }
+        else {
+            document.body.classList.remove('anim-disabled');
+            cbx.checked = false;
+            localStorage.setItem("anim-mode", "disabled");
+        }
+    })
+}
+
+const dsbAnim = '#dsbAnimCbx';
+disableAnimation(dsbAnim);
+
+    const floatMenu = header.querySelector('#labs');
+    const dialogAI = document.getElementById('float-menu');
+    const dialogClose1 = document.getElementById('close2');
+
+    floatMenu.addEventListener('click', () => {
+        dialogAI.showModal();
+    })
+
+    dialogClose1.addEventListener('click', () => {
+        requestAnimationFrame(() => {
+            dialogAI.style.animation = 'fadeOut .4s cubic-bezier(0.075, 0.82, 0.165, 1)';
+            dialogAI.addEventListener('animationend', () => {
+                dialogAI.close();
+                dialogAI.style.animation = '';
+            }, {once: true});
+        })
+    })
+
+
+    const newPeopleCbx = document.getElementById('newCardCbx');
+    const newPeopleState = localStorage.getItem('newPeople') === 'true';
+    const peoples = document.querySelectorAll('.people');
+
+    peoples.forEach(card => {
+        card.classList.toggle('new', newPeopleState);
+        newPeopleCbx.checked = newPeopleState;
+
+        newPeopleCbx.addEventListener('change', () => {
+            const checked = newPeopleCbx.checked;
+            card.classList.toggle('new', checked);
+            localStorage.setItem('newPeople', checked);
+        });
+    })
+
+    const highContrastCbx = document.getElementById('contrastCbx');
+    if (!highContrastCbx) return;
+    const highContrastState = localStorage.getItem('high-contrast') === 'true';
+
+    document.body.classList.toggle('high-contrast', highContrastState);
+    highContrastCbx.checked = highContrastState;
+    
+    highContrastCbx.addEventListener('change', () => {
+        const enabled = highContrastCbx.checked;
+
+        document.body.classList.toggle('high-contrast', enabled);
+        localStorage.setItem('high-contrast', enabled);
+    })
+
+    const dyslexiaCbx = document.getElementById('dyslexiaCbx');
+    if (!dyslexiaCbx) return;
+    
+    const dyslexiaState = localStorage.getItem('dyslexia') === 'true';
+
+    document.body.classList.toggle('dyslexia', dyslexiaState);
+    dyslexiaCbx.checked = dyslexiaState;
+
+    dyslexiaCbx.addEventListener('change', () => {
+        const enabled = dyslexiaCbx.checked;
+
+        document.body.classList.toggle('dyslexia', enabled);
+        localStorage.setItem('dyslexia', enabled);
+    })
+
+    const minimalCbx = document.getElementById('monochromeCbx');
+    if (!minimalCbx) return;
+    
+    const minimalState = localStorage.getItem('mono') === 'true';
+
+    document.body.classList.toggle('mono', minimalState);
+    minimalCbx.checked = minimalState;
+
+    minimalCbx.addEventListener('change', () => {
+        const enabled = minimalCbx.checked;
+
+        document.body.classList.toggle('mono', enabled);
+        localStorage.setItem('mono', enabled);
+    })
+
+    const btnRange = document.getElementById('btnRadius');
+    const buttons = document.querySelectorAll('.btn, .tab-buttons, .tab-button, input[type="search"]');
+
+    btnRange.addEventListener('input', () => {
+        buttons.forEach(btn => {
+            if (btnRange.value == 0) {
+                btn.style.borderRadius = '0px';
+            } else if (btnRange.value == 1) {
+                btn.style.borderRadius = '8px';
+            } else if (btnRange.value == 2) {
+                btn.style.borderRadius = '16px';
+            } else if (btnRange.value == 3) {
+                btn.style.borderRadius = '50px';
+            } else {
+                btn.style.borderRadius = '16px';
+            }
+        })
+    })
+
+    for (let i = 0; i < localStorage.length; i++) { 
+    const type = localStorage.key(i); 
+    const color = localStorage.getItem(type); 
+    if (type && color) { 
+        document.documentElement.style.setProperty(`--${type}-color`, color) 
+    } 
+}
+
+function changeColor(type, color) {
+    const root = document.documentElement;
+    root.style.setProperty(`--${type}-color`, color)
+
+    const themeColor = document.querySelector('meta[type="theme-color"]');
+    const head = document.querySelector('head');
+    const primaryValue = document.getElementById('primary').value;
+    if (!themeColor) {
+        const script = document.createElement("meta"); 
+        script.type = 'theme-color';
+        script.value = primaryValue; 
+        head.appendChild(script);
+    }
+}
+
+function bindColor(e) {
+    const type = e.target.dataset.type;
+    const value = e.target.value;
+    changeColor(type, value);
+    localStorage.setItem(type, value);
+}
+
+const inputsType = document.querySelectorAll('input[data-type]');
+if (inputsType.length > 0) {
+    inputsType.forEach(input => {
+        const savedColor = localStorage.getItem(input.dataset.type);
+        if (savedColor) input.value = savedColor;
+        
+        input.addEventListener('input', bindColor);
+    })
+}
+const panels = document.querySelectorAll('.panel');
+const themes = ["default", "mono", "amber-red", "nature-green", "crystal-blue", "purple-ruby", "choco-milk", "sarah-olive", "nia-charm"];
+
+const savedTheme = localStorage.getItem('theme-color');
+if (savedTheme && themes.includes(savedTheme)) {
+    body.classList.add(savedTheme);
+
+    panels.forEach(panel => {
+        panel.classList.remove('selected');
+        if (panel.dataset.theme === savedTheme) {
+            panel.classList.add('selected');
+        }
+    })
+}
+
+panels.forEach(el => {
+    el.addEventListener('click', () => {
+        const theme = el.dataset.theme;
+        themes.forEach(t => body.classList.remove(t))
+        panels.forEach(p => p.classList.remove('selected'))
+
+        el.classList.add('selected');
+        body.classList.add(theme);
+
+        localStorage.setItem('theme-color', theme);
+    })
+})
+
+
+})

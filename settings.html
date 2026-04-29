@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+
+    <!-- SEO / Social -->
+    
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+    <meta name="theme-color" content="#F57327" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" />
+
+    <!-- ================= CSP ================= -->
+    <meta http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src
+          'self'
+          'unsafe-inline'
+          'unsafe-eval'
+          https:;
+        style-src
+          'self'
+          'unsafe-inline'
+          https:;
+        font-src
+          'self'
+          https:;
+        img-src
+          'self'
+          data:
+          https:;
+        object-src 'none';
+        base-uri 'none';
+      ">
+
+
+
+    <!-- ================= PERFORMANCE ================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- ================= STYLES ================= -->
+    <link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.0.8/css/line.min.css" />
+    <link rel="stylesheet" href="Rave/css/Rave_Next.css" />
+    <link rel="stylesheet" href="Rave/css//Rave_header_next.css" />
+    <link rel="stylesheet" href="Rave/css//Rave_footer_next.css" />
+
+    <!-- ================= SCRIPTS (ES MODULES) ================= -->
+    <script type="module" nonce="random123" src="./Rave/js/Rave_header.js"></script>
+    <script type="module" nonce="random123" src="./Rave/js/Rave.js"></script>
+    <script type="module" nonce="random123" src="./Rave/js/Rave_footer.js"></script>
+    <script type="module" nonce="random123" src="./script.js"></script>
+    <script type="module" nonce="random123" src="./settings.js"></script>
+    <script nonce="random123">
+        let imgs = document.querySelectorAll('.inline-caption img');
+        imgs.forEach(img => {
+            img.setAttribute('loading', 'lazy');
+            
+        })
+    </script>
+    <title></title>
+</head>
+<body data-title="Pengaturan"  id="settings">
+    <header></header>
+    <main id="scroll">
+        <section class="section settings-section">
+            <div class="section-header">
+                <h1 class="section-title left" data-lang="settings">Pengaturan</h1>
+            </div>
+            <div class="section-content">
+                <div class="flex settings">
+                    <details class="item">
+                        <summary class="accordion-header">
+                            <div class="accordion-tab">
+                                <i class="uil uil-brush-alt"></i>
+                                <div>
+                                    <h2 data-lang="general">Umum</h2>
+                                    <p data-lang="acc-text-1">Tema web &bull; animasi &bull; warna aksen &bull; Mode Baca</p>
+                                </div>
+                            </div>
+                        </summary>
+                        <div class="accordion-content">
+                            <div class="accordion-image">
+                                <img src="./assets/logo/richi_animated.gif" >
+                                
+                            </div>
+                            <p class="accordion-image-caption">Aktifkan fitur umum keyzarichi.org dan percantik tampilan web dengan Web Themer.</p>
+                            <div class="accordion-item">
+                                <h5 class="accordion-item-title">Kurangi animasi<br><span class="accordion-item-desc">Kurangi gerakan animasi dan transisi jika Anda sensitif dengan gerakan tertentu atau untuk meningkatkan performa web.</span></h5> 
+                                <label class="toggle">
+                                    <input type="checkbox" class="toggleCheckbox" id="dsbAnimCbx" />
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="accordion-item">
+                                <h5 class="accordion-item-title">Bahasa tampilan</h5> 
+                                <select class="color-picker-select" id="select-lang" >
+                                    <option value="id">Bahasa Indonesia</option>
+                                    <option value="en">English</option>
+                                </select>
+                            </div>
+                            
+                    </details>
+                    <details class="item">
+                        <summary class="accordion-header">
+                            <div class="accordion-tab">
+                                <i class="uil uil-flask"></i>
+                                <div>
+                                    <h2 data-lang="experimental"></h2>
+                                    <p data-lang="acc-text-3">Fitur eksperimental untuk developer</p>
+                                </div>
+                            </div>
+                        </summary>
+                        <div class="accordion-content">
+                            <div class="accordion-item">
+                                <h5 class="accordion-item-title">Aktifkan Rave Labs di panel navigasi</h5> 
+                                <label class="toggle">
+                                    <input type="checkbox" class="toggleCheckbox" name="switch-toggle" />
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="item">
+                        <summary class="accordion-header">
+                            <div class="accordion-tab">
+                                <i class="uil uil-comments"></i>
+                                <div>
+                                    <h2>Richi AI</h2>
+                                    <p >Instruksi &bull; riwayat &bull; kontrol</p>
+                                </div>
+                            </div>
+                        </summary>
+                        <div class="accordion-content">
+                            <div class="accordion-item">
+                                <h5 class="accordion-item-title">Aktifkan Richi AI <span class="promo small">Beta</span></h5> 
+                                <label class="toggle">
+                                    <input type="checkbox" class="toggleCheckbox" name="switch-toggle" />
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </details>
+                     <details class="item">
+                        <summary class="accordion-header">
+                            <div class="accordion-tab">
+                                <i class="uil uil-info-circle"></i>
+                                <div>
+                                    <h2 data-lang="about">Tentang web ini</h2>
+                                    <p data-lang="acc-text-2"></p>
+                                </div>
+                            </div>
+                        </summary>
+                        <div class="accordion-content">
+                            <div class="flex two-sided" style="row-gap: 30px;">
+                                <div class="version-content">
+                                    <img src="./assets/logo/keyzarichi.org.webp" class="brand-logo adaptive-logo">
+                                    <h5 class="accordion-item-title">keyzarichi.org Richi Refresh 8 Beta</h5>
+                                    <p class="accordion-item-desc">Versi: <b>KR v1.25_richi-refresh-8</b></p>
+                                    <p class="accordion-item-desc">Tanggal revisi: <b>28 Maret 2026</b></p>
+                                    <p class="accordion-item-desc">Hak cipta © 2026 Keyza Richi, berlisensi di bawah Yuuki and Yuika Project</p>
+                                    <br>
+                                    <p class="accordion-item-desc warning">Tanggal kedaluwarsa: 1 Mei 2026</p>
+                                </div>
+                                <div class="version-content">
+                                    <img src="./assets/logo/rave_black.webp" class="brand-logo raveLogo">
+                                    <h5 class="accordion-item-title">Rave UI 2.0</h5>
+                                    <p class="accordion-item-desc">Versi: <b>rave_ui-v2.0-minimal</b></p>
+                                    <p class="accordion-item-desc">Tanggal revisi: <b>28 Maret 2026</b></p>
+                                    <p class="accordion-item-desc">Hak cipta © 2026 Yuuki and Yuika Project</p>
+                                    
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </details>
+                </div>
+                    
+            </div>
+        </section>
+        <footer></footer>
+    </main>
+    <div class="float-container">
+        <button class="btn accent hidden" id="float-button" data-tooltip="Menu mengambang" data-tooltip-key="floatMenu"><i class="lni lni-chevron-up"></i></button>
+    </div>
+</body>
+</html>

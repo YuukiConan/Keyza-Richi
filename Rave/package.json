@@ -1,0 +1,15 @@
+{
+    "name": "rave",
+    "displayName": "Rave UI Minimalist (previously GoRichi!)",
+    "preview": true,
+    "type": "module",
+    "version": "2.1",
+    "description": "An AirUI's successor that provide lightweight JavaScript framework for dynamic element management.",
+    "main": "Rave.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Yuuki and Yuika Project",
+    "maintainers": ["Yuuki and Yuika Project", "Keyza Medina Richi Sherlya Fanda"],
+    "license": "(GNU OR Apache-2.0)"
+}

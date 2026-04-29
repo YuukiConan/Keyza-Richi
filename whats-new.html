@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap">
+
+    <!-- ================= CSP ================= -->
+    <meta http-equiv="Content-Security-Policy"
+      content="
+        script-src
+          'self'
+          'unsafe-inline'
+          https:;
+        style-src
+          'self'
+          'unsafe-inline'          
+          https:;
+        font-src
+          'self'
+          https:;
+        img-src
+          'self'
+          data:
+          https:;
+        object-src 'none';
+        
+      ">
+
+
+    
+    <!-- ================= PERFORMANCE ================= -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.20/dist/lenis.css">
+    <link rel="prefetch" href="./json/peopleBio.json" as="fetch" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="./fonts/Lineicons.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="./Rave/css/KeyzaRichi-rave_core.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+    <link rel="preload" href="./styles_new.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+    <link rel="preload" href="./assets/line.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="./assets/Raleway-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/OpenSans-VariableFont.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- ================= STYLES ================= -->
+    <link rel="stylesheet" href="./Rave/css/KeyzaRichi-rave_core.css">
+    <link rel="stylesheet" href="./styles_new.css" />
+    
+    <!-- ================= SCRIPTS (ES MODULES) ================= -->
+    <script type="module" defer nonce="random123" src="./Rave/js/Rave_header.js"></script>
+    <script type="module" defer nonce="random123" src="./Rave/js/Rave.js"></script>
+    <script type="module" nonce="random123" src="./Rave/js/Rave_footer.js"></script>
+    <script type="module" nonce="random123" src="./indexScript.js"></script>
+    <script type="module" defer nonce="random123" src="./script.js"></script>
+    <title></title>
+    <script>
+        const stored = localStorage.getItem("darkMode");
+        let preferredColorTheme;
+
+        if (stored !== null) {
+            preferredColorTheme = (stored === "true");
+        } else {
+            preferredColorTheme = window.matchMedia && window.matchMedia('prefers-color-scheme: dark').matches;
+        }
+
+        document.documentElement.setAttribute('data-theme', preferredColorTheme ? 'dark' : 'light');
+       
+    </script>
+    <script src="https://unpkg.com/lenis@1.3.20/dist/lenis.min.js"></script> 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const articleTitles = document.querySelectorAll('.article-title');
+            articleTitles.forEach(articleTitle => {
+                const articleTitleText = articleTitle.textContent;
+                document.title = `${articleTitleText} - keyzarichi.org`;
+            })
+            function readTime() {
+                const text = document.getElementById('article').innerText;
+                const readTotal = document.querySelectorAll('.read-time');
+                const wpm = 225;
+                const words = text.trim().split(/\s+/).length;
+                const time = Math.ceil(words / wpm);
+                readTotal.forEach(readtime => {
+                    readtime.innerText = time + " menit"; 
+                });
+            }
+    
+            readTime();
+            const code_editors = document.querySelectorAll('.code-editor');
+    const line_numbers = document.querySelectorAll('.line-numbering')
+    code_editors.forEach(editor => {
+        const code = editor.value.split('\n').length;
+        line_numbers.forEach(line => {
+            line.innerHTML = '';
+
+            for (let i = 1; i <= code; i++) {
+                const span = document.createElement('span');
+                span.textContent = i;
+                line.appendChild(span);
+            }
+        })
+
+        editor.addEventListener('input', () => {
+            const code = editor.value.split('\n').length;
+            line_numbers.forEach(line => {
+                line.innerHTML = '';
+
+                for (let i = 1; i <= code; i++) {
+                    const span = document.createElement('span');
+                    span.textContent = i;
+                    line.appendChild(span);
+                }
+            })
+        })
+
+        editor.addEventListener('scroll', () => {
+            const scrollTop = editor.scrollTop;
+            line_numbers.forEach(line => {
+                line.scrollTop = scrollTop;
+            })
+        })
+
+        const copy_code = document.getElementById('copy-code');
+        const copy_icon = document.querySelector('.uil.uil-copy');
+        copy_code.addEventListener('click', () => {
+            const code = editor.value;
+            navigator.clipboard.writeText(code).then(() => {
+                copy_code.innerHTML = `<i class="uil uil-check"></i> Copied!`;
+                setTimeout(() => {
+                    copy_code.innerHTML = `<i class="uil uil-copy"></i> Copy`;
+                }, 5000)
+            })
+            return;
+        });
+    })
+        })
+
+    </script>
+</head>
+<body>
+    <header></header>
+    <main id="#scroll">
+        <article class="article" id="article">
+            <section class="title">
+                <section class="title-container">
+                    <div class="article-header">
+                        <h1 class="article-title">What's new in keyzarichi.org Beta 8?</h1>
+                    </div>
+                    <div class="article-information">
+                        <button class="category"><i class="uil uil-code-branch"></i>Pemrograman </button>
+                        <button class="category"><i class="uil uil-clock"></i>Waktu membaca: <span class="read-time"></span></button>
+                        <button class=" category"><i class="uil uil-user"></i>Author:<span class="author">YuukiC</span></button>
+                    </div>
+                    <span class="article-date">12 Februari 2026</span>
+                </section>
+            </section>
+            <section class="content">
+                <div class="content-container">
+                    <div class="content-intro">
+                        <h1>Desain header baru</h1>
+                        <p>Link navigasi kini telah terpusat di tengah dan lebar kotak pencarian kini telah diringkas untuk memberikan pengalaman pengguna yang lebih baik.</p><img class="article-image-container" src="" />
+                    </div>
+                    <div class="section-1">
+                        <h1>(Beta) Lokalisasi Bahasa</h1>
+                        <p>Apakah mesin terjemahan sering menerjemahkan teks secara tidak akurat? Lokalisasi Bahasa solusinya! Dengan adanya ini, keyzarichi.org mendukung 4 bahasa, yaitu <b>Bahasa Indonesia</b>, <b>Bahasa Inggris</b>, <b>Bahasa Jepang</b>, dan <b>Italia</b>. <br> <br> Untuk menggantinya, cukup tekan tombol hamburger di pojok kanan layar, dan pilih bahasa di pojok kanan panel navigasi. <br><br><img class="article-image-container" src="" /> </p>
+                        
+                    </div>
+                    <div class="section-2">
+                        <h1>Memperkenalkan, editor kode yang baru!</h1>
+                        <p>Haha <br><br>
+                            <div class="code-editor-container playable">
+                                <div class="code-editor-header">
+                                    <h2>Editor teks</h2>
+                                    <h2 class="project-lang">txt</h2>
+                                    <div class="tab">
+                                        <button class="btn active">Editor</button>
+                                        <button class="btn">Output</button>
+                                    </div>
+                                </div>
+                                <div class="editor-container">
+                                    <div class="text-editor">
+                                        <div class="line-numbering">
+                                            <span>1</span>
+                                        </div>
+                                        <textarea class="code-editor" contenteditable="false" >
+Hello 
+Coba lakukan ini!
+Terima kasih
+Hahah
+terpusat1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</textarea>
+                                    </div>
+                                </div>
+                                <div class="code-editor-footer">
+                                    <button class="btn" id="copy-code"><i class="uil uil-copy"></i>Copy</button>
+                                </div>
+                            </div>
+                        </p>
+                    </div>
+                    <!-- You can add any sections below here as you want. -->
+                    <div class="section-3">
+                        <h1>(Beta) Mode baca</h1>
+                        <p>Merasa terganggu dengan artikel yang banyak iklannya? <b>Mode Baca jawabannya!</b> Dengan fitur ini, tampilan header dan iklan akan disembunyikan sehingga Anda bisa fokus membaca artikel tanpa terganggu iklan (hanya tersedia untuk pengguna terdaftar). <br> <br> <img class="article-image-container" src="" /></p>
+                    </div>
+                    <div class="section-4">
+                        <h1>(Beta) Ubah warna aksen dan tema situs dengan mudah! </h1>
+                        <p>Bosan dengan tema terang atau gelap dengan warna aksen biru saja? Sekarang, Anda dapat <b>mengubah warna aksen dan tema situs dengan banyak pilihan!</b> Kini keyzarichi.org mendukung 4 tema, yaitu <b>Terang</b>, <b>Gelap</b>, <b>AMOLED</b>, dan <b>Sepia</b> dengan 7 pilihan warna, mulai dari <b>Red Peach</b>, <b>Comfort Green</b>, hingga <b>Orange Juice</b>! <br> <br> <img class="article-image-container" src="" /></p>
+                    </div>
+                    <div class="section-3">
+                        <h1>(Beta) Mode baca</h1>
+                        <p>Merasa terganggu dengan artikel yang banyak iklannya? <b>Mode Baca jawabannya!</b> Dengan fitur ini, tampilan header dan iklan akan disembunyikan sehingga Anda bisa fokus membaca artikel tanpa terganggu iklan (hanya tersedia untuk pengguna terdaftar). <br> <br> <img class="article-image-container" src="" /></p>
+                    </div>
+                </div>
+            </section>
+            <h1>Jelajahi fitur lainnya</h1>
+            <div class="flex">
+                <div class="cards">
+                    <div class="card-header">
+                        <span class="labelTag">Paling disukai</span>
+                        <img class="card-image" src="./assets/image/banner/pexels-fotoaibe-1571458.jpg" alt="Desain Interior" />
+                    </div>
+                    <div class="card-desc">
+                        <h2>Desain Interior</h2>
+                        <div class="card-info">
+                            <p>Desain interior yang menghadirkan harmoni antara estetika dan fungsi, menciptakan ruang nyaman sekaligus berkarakter.</p>
+                            <span class="price-tag">Rp 50.000/orang</span>
+                            
+                        </div>
+                    </div>
+                    <div class="card-btns">
+                        <button class="btn large">Gabung</button>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-header">
+                        <span class="labelTag">Paling disukai</span>
+                        <img class="card-image" src="./assets/image/banner/pexels-fotoaibe-1571458.jpg" alt="Desain Interior" />
+                    </div>
+                    <div class="card-desc">
+                        <h2>Desain Interior</h2>
+                        <div class="card-info">
+                            <p>Desain interior yang menghadirkan harmoni antara estetika dan fungsi, menciptakan ruang nyaman sekaligus berkarakter.</p>
+                            <span class="price-tag">Rp 50.000/orang</span>
+                            
+                        </div>
+                    </div>
+                    <div class="card-btns">
+                        <button class="btn large">Gabung</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer></footer>
+</body>
+</html>

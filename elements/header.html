@@ -1,0 +1,234 @@
+<script defer type="module" src=" /Rave_header.css"></script>
+<div class="scroll-progress"></div>
+<button class="btn accent float-button hidden" aria-label="Back to Top" id="float-button" data-tooltip-key="floatMenu"><i class="lni lni-angle-double-up"></i><span>Kembali ke atas</span></button>
+<button class="btn accent float-button hidden" aria-label="Experimental features button." id="richi-ai-button" data-tooltip-key="floatMenu"><i class="uil uil-flask"></i></button>
+<dialog id="float-menu">
+    <div class="content">
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-button active" id="accessibility" onclick="showTab('accessibility')"><i class="uil uil-wheelchair"></i><span>Aksesibilitas</span></button>
+                <button class="tab-button" id="experiment" onclick="showTab('experiment')"><i class="uil uil-flask"></i><span>Eksperimental</span></button>
+                <button class="tab-button" id="chat" onclick="showTab('chat')"><i class="uil uil-comments"></i><span>Richi AI</span></button>
+            </div>
+            <div class="tab-panel">
+                <div class="tab-content active" id="accessibility-tab">
+                    <div class="accordion-item">
+                        <h5 class="accordion-item-title">Kurangi animasi<br><span class="accordion-item-desc">Kurangi gerakan animasi dan transisi jika Anda sensitif dengan gerakan tertentu atau untuk meningkatkan performa web.</span></h5> 
+                        <label class="toggle">
+                            <input type="checkbox" class="toggleCheckbox" id="dsbAnimCbx" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="accordion-item">
+                        <h5 class="accordion-item-title">Aktifkan kontras tinggi <span class="promo small">Beta</span></h5> 
+                        <label class="toggle">
+                            <input type="checkbox" class="toggleCheckbox" id="contrastCbx" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="accordion-item">
+                        <h5 class="accordion-item-title">Font dyslexia <span class="promo small">Baru</span></h5> 
+                        <label class="toggle">
+                            <input type="checkbox" class="toggleCheckbox" id="dyslexiaCbx" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="accordion-item block">
+                        <label for="btnRadius">Tingkat radius elemen</label>
+                        <input type="range" id="btnRadius" min="0" max="3" value="2" step="1" list="tickmarks" />
+                        <datalist id="tickmarks">
+                            <option value="0" label="0px"></option>
+                            <option value="1" label="8px"></option>
+                            <option value="2"  label="16px"></option>
+                            <option value="3"  label="50px"></option>
+                        </datalist>
+                    </div>
+                </div>
+                <div class="tab-content" id="experiment-tab">
+                    <div class="accordion-item">
+                        <h5 class="accordion-item-title">Buat konten PeopleCard berada di tengah <span class="promo small">Beta</span><br><span class="accordion-item-desc">Cocok untuk showcase atau layar ponsel</span></h5> 
+                        <label class="toggle">
+                            <input type="checkbox" class="toggleCheckbox" id="showHiddenMembersCbx" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="accordion-item">
+                        <h5 class="accordion-item-title">PeopleCard baru <span class="promo small">Beta</span><br><span class="accordion-item-desc">Catatan: Fitur "Buat konten PeopleCard berada di tengah" akan dinonaktifkan setelah fitur ini aktif. <br> <br> <span class="accordion-item-desc warning hidden" id="newPeopleWarn">Perubahan ini akan berlaku setelah memuat ulang situs web ini.</span> </span></h5> 
+                        <label class="toggle">
+                            <input type="checkbox" class="toggleCheckbox" id="newCardCbx" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="tab-content" id="chat-tab">
+                    <div class="accordion-item">
+                        <p>Segera tersedia!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-btns">
+        <button id="close2" class="btn accent">Close</button>
+    </div>
+</dialog>
+<header class="header">
+    <div class="header-container alt">
+        <div class="header-desktop">
+            <div class="brand">
+                <a href="./index.html"><img class="logo adaptive-logo" src="./assets/logo/keyzarichi.org.webp" fetchpriority="high" loading="eager" alt="richi.com logo" /></a>
+            </div>
+            <div class="navigation">
+                <button class="navBtn" aria-label="Home"><a href="./" data-lang="home">Beranda</a></button>
+                <button class="navBtn hasChevron" popovertarget="course-dropdown" data-lang="course" aria-label="Course">Kursus</button>
+                <div class="drop-down" id="course-dropdown" popover>
+                    <div class="drop-down-content">
+                        <button class="drop-down-button">Desain Interior</button>
+                    </div>
+                </div>
+                <button class="navBtn hasChevron" popovertarget="team-dropdown" data-lang="team">Produk</button>
+                <div class="drop-down" id="team-dropdown" popover>
+                    <div class="drop-down-content">
+                        <button class="drop-down-button">Rave</button>
+                        <a href="./rave_labs.html"><button class="drop-down-button">Rave Labs</button></a>
+                        <button class="drop-down-button">Richi Showcase</button>
+                        <button class="drop-down-button">It's Anneta!</button>
+                    </div>
+                </div>
+                <button class="navBtn"><a href="./richigallery.html" data-lang="contact-me">Galeri Richi</a></button>
+            </div>
+            <div class="actions">
+                <div class="actionsBtns" style="z-index: 0;">
+                    <div class="search">
+                        <input type="search" name="search-content" class="search-text" placeholder="Cari kursus atau artikel..." required /> <button class="btn searchBtn"><i class="lni lni-search-2"></i></button>
+                        
+                    </div>
+                    <div class="search-alt">
+                        <button class="navBtn nav hasChevron" popovertarget="search-dropdown"><i class="lni lni-search-2"></i></button>
+                        <div class="drop-down" id="search-dropdown" popover>
+                            <div class="drop-down-content">
+                                <div class="search-box">
+                                    <input type="search" name="search-content" class="search-text" placeholder="Cari kursus atau artikel..." required /> <button class="btn searchBtn"><i class="lni lni-search-2"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn accent">Sign in</button>
+                    </div>
+                    <button class="navBtn hidden" id="cart" data-tooltip="Keranjang Anda">
+                        <i class="uil uil-shopping-bag"></i>
+                        <div class="promo small" id="cart-number">0</div>
+                    </button>
+                    <dialog id="cart-dialog">
+                        <h1>Keranjang Anda</h1>
+                        <p>Konten ini akan segera tersedia di Richi!</p>
+                        <div class="dialog-btns">
+                            <button id="close1" class="btn accent">tutup</button>
+                        </div>
+                    </dialog>
+                    <button class="navBtn hamburger" id="hamburger" data-tooltip="Menu navigasi">
+                        <div class="equal">
+                            <div class="div1"></div>
+                            <div class="div2"></div>
+                            <div class="div3"></div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="header-mobile">
+            <button class="navBtn hamburger left" aria-label="Hamburger button" id="hamburger" data-tooltip="Menu navigasi">
+                <div class="equal">
+                    <div class="div1"></div>
+                    <div class="div2"></div>
+                    <div class="div3"></div>
+                </div>
+            </button>
+            <div class="brand">
+                <a href="./index.html"><img class="logo adaptive-logo" src="./assets/logo/keyzarichi.org.webp" fetchpriority="high" loading="eager" alt="richi.com logo" /></a>
+                
+            </div>
+            <div class="actions">
+                <div class="actionsBtns" style="z-index: 0;">
+                <div class="search-alt" aria-label="Search button" >
+                        <button class="navBtn nav hasChevron" popovertarget="search-dropdown" aria-label="Search button"><i class="lni lni-search-2"></i></button>
+                        <div class="drop-down" id="search-dropdown" popover>
+                            <div class="drop-down-content">
+                                <div class="search-box">
+                                    <input type="search" aria-label="Search box" name="search-content" class="search-text" placeholder="Cari kursus atau artikel..." required /> <button class="btn searchBtn" aria-label="Search Now button"><i class="lni lni-search-2"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="overlay"></div>
+<div class="circle"></div>
+<div class="nav-pane hidden" >
+    <div class="frost"></div>      
+    <div class="nav-container">
+        <div class="close-container"><a class="close-btn" data-tooltip="Close">&times; <span>Tutup</span></a></div>
+        <div class="pane-header">
+            <img src="./assets/logo/keyzarichi.org.webp" class="logo adaptive-logo" alt="keyzarichi.org logo" />
+            <input type="checkbox" id="cbx" name="changetheme" hidden />
+            <button class="btn small toggleTheme" data-tooltip="Alih tema" id="toggleTheme"><i class="lni lni-moon-half-right-5"></i></button>
+        </div>
+        <div class="content">
+            <div class="content-item">
+                <h2>Sekilas</h2>
+                <a href="./login.html"><button class="menuButton login"><span>Masuk</span></button></a>
+                <a href="./"><button class="menuButton"><i class="lni lni-home-2"></i><span>Beranda</span></button></a>
+                <a href="./courses.html"><button class="menuButton"><i class="uil uil-graduation-cap"></i><span>Kursus</span></button></a>
+                <a href="./richigallery.html"><button class="menuButton"><i class="lni lni-gallery"></i><span>Galeri Richi</span></button></a>
+                <a href="./donation.html"><button class="menuButton"><i class="lni lni-heart" style="color: red !important"></i><span>Donasi</span><div class="chevron-right"></div></button></a>
+                <br>
+                <a href="./your-account.html"><button class="menuButton"><span>Akun Saya</span><div class="chevron-right"></div></button></a>
+                <a href="./contact.html"><button class="menuButton"><span>Kontak Richi!</span><div class="chevron-right"></div></button></a>
+
+            </div>
+        </div>
+        <div class="footer">
+            <div class="account-info">
+                <a href="login.html"><button class="btn medium">Login</button></a>
+            </div>
+            <div class="account-info logged-in">
+                <img src="" class="profile-pic" id="userPic" alt="user profile picture" data-tooltip="">
+            </div>
+            <div>
+                <a href="./settings.html" data-tooltip="Pengaturan"><i class="uil uil-setting"></i></a>
+            </div>
+        </div>
+        <div class="footer-alt">
+            <div class="flex footer-menu">
+                <a href="./settings.html"><button class="btn"><span>Pengaturan</span></button></a>
+                <a href="./settings.html"><button class="btn"><span>Kontak Richi!</span></button></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sidebar">
+    <a href="#" class="sidebar-item" id="expander"><button class="sidebar-btn" id="expand"><i class="uil uil-angle-right-b"></i></button></a>
+    <div class="sidebar-header">
+        <span id="sidebar-clock">00:00</span>
+        <h5 class="time-condition"><span id="time-condition"></span>!</h5>
+    </div>
+    <span class="sidebar-item side-search-btn"><button class="sidebar-btn" id="sideSearchBtn"><i class="lni lni-search-2"></i></button></span>
+    <div class="search-box sideSearch">
+        <input type="search" class="search-text" name="search-content" placeholder="Cari kursus atau artikel..." required /> <button class="btn searchBtn"><i class="lni lni-search-2"></i></button>
+    </div>
+    <div class="sidebar-content">
+        
+        <a href="./" class="sidebar-item active"><button class="sidebar-btn" id="home"><i class="lni lni-home-2"></i><span>Beranda</span></button></a>
+        <a href="./richigallery.html" class="sidebar-item"><button class="sidebar-btn" id="gallery"><i class="lni lni-gallery"></i><span>Galeri Richi</span></button></a >
+        <a href="./rave_labs.html" class="sidebar-item"><button class="sidebar-btn" id="labs"><i class="uil uil-flask"></i><span>Rave Labs</span></button></a >
+       
+    </div>
+    <div class="sidebar-bottom">
+        <a href="./settings.html" class="sidebar-item"><button class="sidebar-btn" id="labs"><i class="uil uil-setting"></i><span>Settings</span></button></a >
+    </div>
+</div>

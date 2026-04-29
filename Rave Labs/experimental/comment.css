@@ -1,0 +1,129 @@
+.comment {
+    padding: 20px 4% !important;
+    margin-bottom: 30px;
+}
+form {
+    position: relative;
+}
+.form-content {
+    position: relative;
+    margin: 35px 4px 5px 0px;
+    width: inherit;
+}
+.form-label {
+    position: absolute;
+    top: -30px;
+    left: 0px;
+    font-size: 15px;
+    pointer-events: none;
+    text-align: left;
+}
+textarea {
+    background-color: #20202034;
+    min-width: 70%;
+    height: 270px;
+    outline: none;
+    resize: none;
+    padding: 6px 0px 0px 6px;
+    overflow-y: visible;
+}
+
+#comment-list {
+    background-color: rgba(100, 100, 100, 0.1) !important;
+    padding: 0px;
+    margin: 10px 0;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.comment-panel {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    background-color: #fafafa;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+.comment-panel .comment-name {
+    font-size: 1.8rem;
+    margin: 0 0 0px 0;
+}
+
+.comment-timestamp {
+    margin-bottom: 10px;
+}
+
+.comment-text {
+    position: relative;
+}
+
+.comment-option {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    content: '\eb9f';
+    font-family: 'unicons-line';
+    display: flex;
+    align-items: center;
+}
+
+.container-flex {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    width: 100%;
+}
+
+.container-flex .form-content {
+    min-width: 50%;
+    max-width: 400px;
+}
+
+.comment-panel .drop-down-content {
+    animation: bounceToDown .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+    display: none;
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
+    min-width: 230px;
+    padding: 12px 15px;
+    border-radius: 20px;
+    z-index: 999;
+}
+
+.comment-panel .drop-down-content h1 {
+    margin: 0;
+}
+
+.comment-panel .drop-down-content h1::before {
+    display: none;
+}
+
+.comment-panel .drop-down-content .drop-down-button {
+    width: 100%;
+    background-color: transparent;
+    color: inherit;
+    border: 1px solid transparent;
+    text-align: left;
+    padding: 10px 10px 10px 10px;
+    border-radius: 50px;
+    font-size: 16px;
+    margin: 0 -15px 5px 0;
+    transition: .2s;
+    position: relative;
+}
+.comment-panel .drop-down-content .drop-down-button:hover {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.comment-panel .drop-down-content.flex {
+    display: flex;
+    flex-direction: column;
+}

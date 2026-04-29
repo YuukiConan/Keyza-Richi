@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./Elements/comment.css" media="print" onload="this.media='all'">
+    <script src="./comment.js"></script>
+    <script src="toast.js"></script>
+    <title></title>
+</head>
+<body>
+    <div class="comment-container">
+        <div class="comment">
+            <h1>Komentar </h1>
+            <div class="comment-list">
+                
+                <ul class="comment-lists">
+                    <!-- Daftar komentar akan ditambahkan di sini -->
+                </ul>
+            </div>
+            <div class="comment-form">
+                <form id="comment-form" method="post" accept="application/json">
+                    <div class="container-flex">
+                        <div class="form-content">
+                            <input type="text" id="name" placeholder="yuukic123 or Mipmip" required>
+                            <label class="form-label" for="name">Name:</label>
+                        </div>
+                        <div class="form-content">
+                            <input type="email" id="email" placeholder="anonymous@example.org" required>
+                            <label class="form-label" for="email">Email:</label>
+                        </div>
+                    </div>
+                    <div class="form-content">
+                        <textarea id="message" placeholder="Write your comment here..." required></textarea>
+                        <label class="form-label" for="message">Comment:</label>
+                    </div>
+                    <button type="submit" class="btn accept-btn-color" id="submit"><span>Kirim</span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
