@@ -12,46 +12,29 @@ Creative agency website focused on interior, fashion, and graphic experiences.
 🌐 Live Demo:
 https://yuukiconan.github.io/Keyza-Richi
 
----
-
-## Preview
 ![Richi's Showcase](Keyza_Richi_Showcase.webp)
 
----
+## Author
+Yuuki Conan (me)
 
-## Features
+## About
+Keyza Richi is an interior, fashion, and graphic design agency website that prioritizes function and usability, thus making customers feel comfortable. 
 
+## Key Features
 - Responsive design
 - Smooth scrolling
 - People cards with dialog bio
 - Optimized performance
 - Minimalist Rave UI system
 
----
-
 ## Tech Stack
 
 - HTML
 - CSS
-- JavaScript
+- JavaScript (with ES6 + TypeScript)
 - GitHub Pages
 
----
-
 ## Lighthouse Score
-
-Desktop: 99  
-Mobile: 84
-
----
-
-## Roadmap
-
-- Rave UI Corporate
-- School redesign demo
-- Thumbnail downloader tool
-
----
-
-## Author
-Yuuki Conan (me)
+⚠️ This score may vary depending on device specifications and throttling settings in Lighthouse. Tested on PC Windows 10 22H2.
+Desktop: 90–99
+Mobile: 62–84
