@@ -6,7 +6,7 @@
 Creative agency website focused on interior, fashion, and graphic experiences.
 
 🌐 Live Demo:
-https://keyzarichi.github.io
+https://yuukiconan.github.io/Keyza-Richi
 
 ---
 
