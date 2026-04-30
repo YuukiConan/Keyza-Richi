@@ -11,7 +11,10 @@ https://yuukiconan.github.io/Keyza-Richi
 ---
 
 ## Preview
-![Project Logo](/assets/logo/keyzarichi.org-200w.webp)
+<p align="center">
+  <img src="assets/logo/keyzarichi.org-200w.webp" alt="Description of image">
+</p>
+
 ![Richi's Showcase](Keyza_Richi_Showcase.webp)
 
 ---
