@@ -11,8 +11,8 @@ https://yuukiconan.github.io/Keyza-Richi
 ---
 
 ## Preview
-![Project Logo](images/logo/keyzarichi.org_scriptsimple.webp)
-![Richi's Showcase](Keyza_Richi_Showcase.jpg).
+![Project Logo](/assets/logo/keyzarichi.org-200w.webp)
+![Richi's Showcase](Keyza_Richi_Showcase.webp)
 
 ---
 
