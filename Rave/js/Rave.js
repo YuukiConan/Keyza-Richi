@@ -119,7 +119,7 @@ export default class Rave {
             let distance = 1 - ((rect + viewHeight - offsetTop) / (rect + viewHeight));
             distance = Math.min(1, Math.max(0, distance));
 
-            section.style.transform = `translateY(${distance * 40}px)`;
+            section.style.transform = `translateY(${distance * 80}px)`;
         })
     }
 

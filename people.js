@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function closePanel() {
         requestAnimationFrame(() => {
-            panel.style.animation = 'windows8OutLeft .5s cubic-bezier(0.475, 0.12, 0.165, 1)';
+            panel.style.animation = 'windows8OutLeft .6s cubic-bezier(0.25, 0.1, 0.25, 1.0)';
     
             panel.addEventListener('animationend', () => {
                 if (panel.style.animation.includes('windows8OutLeft')) {

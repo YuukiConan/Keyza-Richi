@@ -28,7 +28,7 @@ a {
 .people * {
     opacity: 0;
     transform: translateY(20px);
-    transition: transform .5s cubic-bezier(0.075, 0.82, 0.165, 1), opacity .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: transform .5s cubic-bezier(0.25, 0.1, 0.25, 1), opacity .4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 @media (max-width: 768px) {

@@ -177,7 +177,7 @@ fetch(url).then(response => response.text()).then(html => {
         if (isAnimating) return;
         isAnimating = true;
         btn.classList.add('no-pointer');
-        let delay = 460;
+        let delay = 550;
         
         if (window.innerWidth <= 600) {
             delay = 0;
@@ -200,7 +200,7 @@ fetch(url).then(response => response.text()).then(html => {
                     btn.classList.add('fade-out');
                     brand.classList.remove('fade-in');
                     brand.classList.add('fade-out');
-                }, index * 120);
+                }, index * 170);
                 
             })
             

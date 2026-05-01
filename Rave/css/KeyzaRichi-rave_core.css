@@ -398,8 +398,8 @@ html[data-theme="light"] {
     --tertiary-color: rgb(165, 165, 165);
     --bg-color-value: 250, 250, 250;
     --backdrop-color: rgba(var(--bg-color-value), 0.95);
-    --background-color: rgb(250, 250, 250);
-    --surface-color: rgb(248, 248, 248);
+    --background-color: rgb(249, 244, 244);
+    --surface-color: rgb(252, 248, 248);
     --on-surface-color: rgb(119, 119, 119);
     --gradient-color: linear-gradient(90deg, rgb(68, 68, 68) 0%, rgb(145, 145, 145) 50%, rgb(235, 235, 235) 100%);
     --bg-icon-color: rgba(212, 212, 212, 0.2);
@@ -465,7 +465,8 @@ html[data-theme="light"] {
 
 :root.dark-mode .sarah-olive {
     --background-color: rgb(22, 22, 18);
-    --surface-color: rgb(21, 22, 20);
+    --primary-color: rgb(164, 190, 44);
+    --surface-color: rgb(23, 24, 22);
     --on-surface-color: rgb(132, 136, 101);
     --bg-color-value: 21, 22, 20;
     --text-color: white;
@@ -481,9 +482,9 @@ html[data-theme="light"] {
 
 .nia-charm {
     --primary-color: rgb(179, 130, 98);
-    --secondary-color: rgb(189, 108, 15);
+    --secondary-color: rgb(99, 43, 53);
     --tertiary-color: rgb(236, 198, 216);
-    --background-color: rgb(255, 252, 245);
+    --background-color: rgb(253, 244, 223);
     --bg-color-value: 255, 252, 245;
     --backdrop-color: rgba(var(--bg-color-value), 0.95);
     --surface-color: rgb(252, 243, 230);
@@ -495,7 +496,8 @@ html[data-theme="light"] {
 }
 
 :root.dark-mode .nia-charm {
-    --background-color: rgb(27, 23, 21);
+    --background-color: rgb(34, 26, 21);
+    --primary-color: rgb(202, 147, 111);
     --surface-color: rgb(37, 26, 21);
     --bg-color-value: 27, 23, 21;
     --on-surface-color: rgb(172, 149, 114);
@@ -1217,6 +1219,10 @@ header.no-blend .equal div {
     padding: 12px 1.0em 12px 1.0em;
 }
 
+.header-container.scrolled .navigation {
+    opacity: 0;
+}
+
 .header-container.hide {
     transform: translateY(-100px);
 }
@@ -1785,13 +1791,12 @@ div {
 
 .section-header.stylish {
     width: 100%;
-    margin: 10px 0 10px 0;
+    margin: 10px 6px 10px 6px;
 }
 .section-header.stylish .section-title {
-    width: 55%;
+    width: 70%;
     font-weight: 500;
     margin: 0 20px 10px 20px;
-    border-bottom: 2px solid var(--tertiary-color);
     font-size: 4.5rem;
     letter-spacing: .7px;
 }
@@ -1975,22 +1980,6 @@ div {
     color: var(--primary-color);
 }
 
-.social-media .link:not(:active) span {
-    opacity: 1;
-    visibility: visible;
-    animation: fadeInLeft .6s cubic-bezier(1, 0, 0, 1);
-}
-
-.social-media .link:active span {
-    opacity: 0;
-    visibility: hidden;
-    animation: fadeOutLeft .2s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.social-media .link:active i {
-    left: 50%;
-    transform: translateX(-50%);
-}
 
 .pageOne,
 .pageTwo {
@@ -2767,10 +2756,23 @@ div {
     justify-content: center;
     overflow: hidden;
     padding: 20px 10px 40px 26px;
-    column-gap: 2vw;
+    column-gap: 2.4vw;
     row-gap: 2.2vw;
 }
 
+.people-container.two-column {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.people-container.rtl {
+    grid-template-columns: repeat(2, 1fr); direction: rtl;
+    padding-right: 26px;
+    column-gap: 1vw !important;
+}
+
+.people-container.rtl .people {
+    direction: ltr;
+}
 
 .people {
     break-inside: avoid;
@@ -2778,7 +2780,7 @@ div {
     grid-column: span 1;
     grid-row: span 20;
     overflow: hidden;
-    width: 390px;
+    width: 380px;
     transition: transform .7s cubic-bezier(0.175, 0.885, 0.32, 1.275), border .4s cubic-bezier(0.075, 0.82, 0.165, 1), opacity .4s cubic-bezier(0.215, 0.610, 0.355, 1), background-color .4s cubic-bezier(0.075, 0.82, 0.165, 1);
     padding: 10px 6px;
     pointer-events: auto;
@@ -2792,9 +2794,13 @@ div {
     grid-row: span 23;
 }
 
+.people:hover {
+    cursor: pointer;
+}
+
 .people .people-img {
     object-fit: cover;
-    width: 380px;
+    width: 370px;
     height: 430px;
     margin: 5px 0px 8px 0px;
     background: rgba(100, 100, 100, 0.05) url('/assets/logo/keyzarichi.org-200w.webp') no-repeat;
@@ -2827,9 +2833,9 @@ div {
     row-gap: 6px;
     width: 100%;
     transition: transform .5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    margin: 0px 0px 14px 0px;
+    margin: 0px 0px 10px 0px;
     padding-top: 10px;
-    border-top: 1px solid var(--on-surface-color);
+    border-top: 1px solid rgba(100, 100, 100, 0.3);
 }
 
 .people .people-bio {
@@ -2844,7 +2850,7 @@ div {
 
 .people .name h2 {
     color: var(--text-color);
-    font-size: 22px;    
+    font-size: 18px;    
     font-family: Raleway, sans-serif;
     font-weight: 600;
     
@@ -2852,9 +2858,8 @@ div {
 
 .people .nickname {
     position: relative;
-    top: 1px;
     text-align: right;
-    font-size: 18px !important;
+    font-size: 17px !important;
 }
 
 .people .people-bio span {
@@ -4448,12 +4453,10 @@ input[type=checkbox]:checked+.slider::before {
 @keyframes windows8OutLeft {
     from {
         transform: translateX(0px);
-        border-radius: 0%;
     }
 
     to {
         transform: translateX(100%);
-        border-radius: 25%;
     }
 }
 
@@ -4747,17 +4750,18 @@ header * {
 }
 
 #richi-ai-button {
+    background-color: black;
     position: fixed;
     display: flex;
     gap: 30px;
-    right: 1%;
-    bottom: 20px;
+    left: 0.5%;
+    bottom: 10px;
     padding: 8px !important;
     min-width: 50px;
-    width: 60px;
-    height: 60px !important;
+    width: 55px;
+    height: 55px !important;
     transition: width .4s cubic-bezier(0.075, 0.82, 0.165, 1), opacity .8s cubic-bezier(0.075, 0.82, 0.165, 1), transform .5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    filter: invert(0);
+    filter: invert(1);
     
     isolation: isolate;
     z-index: 1;
@@ -4790,9 +4794,9 @@ header * {
     font-size: 1.5rem;
 }
 
-#float-button i {
+#richi-ai-button i {
     font-size: 1.5rem;
-    color: initial !important;
+    color: white !important;
 }
 
 .flex.full {
@@ -4839,7 +4843,7 @@ button i,
 
 header:has(.nav-pane:not(.hidden)) :is(.product, .logo) {
     opacity: 0;
-    transform: translateY(-30px) !important;
+    transform: translateY(-30px);
 }
 header:has(.nav-pane:not(.hidden)) .navigation {
     opacity: 0;
@@ -5235,14 +5239,14 @@ header:has(.nav-pane:not(.hidden)) .navigation {
     position: fixed;
     inset: 0 0 0 auto;
     background-color: var(--surface-color);
-    width: 470px;
-    padding: 20px 2em 1em 2em;
+    width: 700px;
+    padding: 20px 2.3em 1em 2.3em;
     z-index: 10;
     overflow-y: auto;
     overscroll-behavior: auto;
     will-change:transform;
     transition: border .8s cubic-bezier(0.075, 0.82, 0.165, 1);
-    animation: windows8Left .8s cubic-bezier(0.56, 0, 0.07, 1);
+    animation: fadeInRight .8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .side-panel #close-panel {
     display: flex;
@@ -5295,29 +5299,57 @@ header:has(.nav-pane:not(.hidden)) .navigation {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    margin: 0% 0 0 0;
+}
+
+.side-panel .people-info {
+    display: flex;
+    flex-direction: row;
+    gap:2em;
+    animation: fadeInRight .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+    margin-top: 30px;
+    padding-right: 20px;
+}
+
+.people-info.alt {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.people-info.alt .name {
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.people-info.alt .name h2 {
+    font-size: 32px;
+}
+
+.people-info.alt .people-img {
+    order: 1;
+}
+
+.side-panel:has(.people-info.alt) {
+    width: 600px;
 }
 
 .side-panel .name {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 26px;
-    border-bottom: 1px solid rgba(100, 100, 100, 0.3);
-    gap: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
 }
 
 .side-panel .name h2 {
     color: var(--text-color);
-    font-size: 29px;
+    font-size: 28px;
     font-family: Raleway, sans-serif;
     font-weight: 600;
 }
 
 .side-panel .nickname {
     text-align: right;
-    font-size: 22px !important;
+    font-size: 19px !important;
     color: var(--primary-color);
     font-weight: 500;
     word-spacing: normal;
@@ -5325,21 +5357,28 @@ header:has(.nav-pane:not(.hidden)) .navigation {
     margin: 0px 0;
 }
 
+.side-panel h1 {
+    animation: fadeInRight .8s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
 .side-panel p {
+    animation: fadeInRight 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    line-height: 24px;
-    font-weight: 400;
+    font-size: 16px;
+    line-height: 27px;
+    font-weight: 450;
     margin: 0;
 }
 
 .side-panel .people-img img {
     object-fit: cover;
-    border-radius: 32px;
+    border-radius: 24px;
     object-position: center 10%;
 }
 .side-panel .social-media {
+    margin: 20px 0;
     padding: 20px 0;
+    gap: 16px;
     border-top: 1px solid rgba(100, 100, 100, 0.3);
 }
 
@@ -5848,7 +5887,6 @@ header:has(.nav-pane:not(.hidden)) .navigation {
         width: 100%;
         padding: 0;
     }
-
     .panel {
         width: 100%;
     }
@@ -5907,6 +5945,10 @@ header:has(.nav-pane:not(.hidden)) .navigation {
     }
     .nav-pane .chat {
         display: none;
+    }
+    header:has(.nav-pane:not(.hidden)) :is(.product, .logo) {
+        opacity: 0;
+        transform: translateY(0px) !important;
     }
     .nav-pane .footer .chat-alt {
         box-sizing: border-box;
@@ -6151,6 +6193,10 @@ footer a:hover {
         padding: 0px 10px 26px 10px;
         grid-template-columns: repeat(1, 1fr);
     }
+    .people-container.rtl {
+        grid-template-columns: repeat(1, 1fr);
+        direction: ltr;
+    }
     .logo {
         position: relative;
         left: -3px;
@@ -6166,6 +6212,9 @@ footer a:hover {
     .people .name h2 {
         font-size: 32px;
     }
+    .people .nickname {
+        font-size: 24px;
+    }
     .people .people-img {
         height: 390px;
         width: 340px;
@@ -6179,8 +6228,15 @@ footer a:hover {
     .people .people-bio p {
         padding: 0px 1.3em 40px 1.3em !important;
     }
+    .side-panel .people-info {
+        margin-top: 10px;
+    }
+    .people-info.alt .name {
+        flex-direction: column;
+        align-items: flex-start;
+    }
     .side-panel .people-bio {
-        margin: 13% 0 0 0 !important;
+        margin: 0 0 0 0 !important;
     }
     .side-panel .name h2 {
         font-size: 28px;
@@ -6308,6 +6364,15 @@ footer a:hover {
         width: 100%;
         border-radius: 0;
     }
+    dialog .dialog-topbar {
+        margin: 4% 4px 2em 4px !important;
+    }
+    .dialog-topbar h1 {
+        font-size: 3rem !important;
+    }
+    dialog .dialog-divider {
+        margin: 20px 6px 20px 6px;
+    }
 
     html:has(dialog[open]) {
         overflow: hidden;
@@ -6319,6 +6384,7 @@ footer a:hover {
 
     dialog .content {
         width: 100%;
+        padding: 0px 1.6em 2em 1.6em !important;
         
     }
 
@@ -6356,7 +6422,7 @@ footer a:hover {
     }
 
     .accordion-item {
-        padding: 12px 8px 12px 8px;
+        padding: 12px 5px 12px 5px;
         line-height: 22px !important;
     }
 
@@ -6476,6 +6542,9 @@ footer a:hover {
     .side-panel {
         inset: 0;
         width: 100%;
+    }
+    .side-panel .people-info {
+        flex-direction: column;
     }
     .side-panel .people-img {
         width: 100%
