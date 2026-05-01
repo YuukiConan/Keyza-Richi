@@ -899,7 +899,7 @@ export class Security extends Rave {
 
         if (now > expirationDate.getTime()) {
             window.location.reload();
-            window.location.href = "/expired.html";
+            window.location.href = "./expired.html";
             throw new Error('This version has expired. Please update to the latest version.');
         } else {
             console.log(`Expiration: ${expirationDate.toUTCString()}`);
