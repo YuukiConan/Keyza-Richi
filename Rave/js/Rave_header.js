@@ -1,21 +1,7 @@
-const url = './elements/header_new.html';
+const url = './elements/header.html';
 
 fetch(url).then(response => response.text()).then(html => {
     document.querySelector('header').innerHTML = html;
-
-    const elem = document.querySelector('.header-container'); 
-    const styles = getComputedStyle(document.documentElement);
-
-    if (elem.classList.contains('scrolled')) {
-        const background = styles.getPropertyValue('--background-color').trim();
-        if (background.startsWith('rgb')) {
-            const [r, g, b] = background.replace('rgb(', '').replace(')', '').split(',').map(c => c.trim());
-            document.documentElement.style.setProperty('--backdrop-color', `rgba(${r}, ${g}, ${b}, 0.95)`)
-            return;
-        }
-    }
-
-
 
     function switchToDarkMode(toggleElement, checkbox, iconSelector) {
         const toggle = document.querySelector(toggleElement);
@@ -48,8 +34,6 @@ fetch(url).then(response => response.text()).then(html => {
                 icon.classList.toggle('uil-sun', !isEnabled);
             }
         }
-
-
     }
 
     switchToDarkMode('#toggleTheme', '#cbx', '#themeIcon')
@@ -272,9 +256,7 @@ fetch(url).then(response => response.text()).then(html => {
     })
 
     function disableAnimation(checkbox) {
-    let isAnimating = true;
     const cbx = document.querySelector(checkbox);
-    const navpane  = document.querySelector('header').querySelector('.nav-pane');
     const isAnimEnabled = localStorage.getItem('anim-mode') === 'enabled';
     
 
