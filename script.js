@@ -1,8 +1,8 @@
 // Initialize Rave framework
 import Rave, { Security } from "./Rave/js/Rave.js";
 
-const richi = Rave ? new Rave("UI 2 Beta", "keyzarichi.org") : null;
-const security = Security ? new Security('1.1', "Jessica Noleen Alka") : null;
+const richi = Rave ? new Rave("UI Minimalist", "keyzarichi.org") : null;
+const security = Security ? new Security('1.1', "Keyza Richi") : null;
 
 richi.setHeadTagType("icon", "./assets/logo/keyzarichi.org_scriptsimple-200w.webp");
 
@@ -34,16 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     requestAnimationFrame(raf);
 
-    // if ('scrollRestoration' in history) {
-    //     history.scrollRestoration = 'manual';
-    // }
-    // lenis.scrollTo(0, { immediate: true });
-
-    let isHidden = false;
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    lenis.scrollTo(0, { immediate: true });
     
     lenis.on('scroll', (e) => {
         const scrollY = e.scroll;
-        const velocity = e.velocity;
         const header = document.querySelector('.header-container');
         const footer = document.querySelector('footer');
 
@@ -58,14 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.remove('hide');
         }
 
-        const reachFooter = e.scroll + innerHeight >= offsetTop + 310;
+        const reachFooter = e.scroll + innerHeight >= offsetTop + 400;
         if (reachFooter) {
             header.classList.add('hide');
         } else {
             header.classList.remove('hide');
-        }
-
-        
+        } 
     })
     
     const root = document.documentElement;
@@ -153,12 +148,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const body = document.querySelector('body');
-    const themes = ["default", "mono", "amber-red", "nature-green", "crystal-blue", "yellow-gold", "purple-ruby", "choco-milk", "sarah-olive", "nia-charm"];
+    const themes = ["default", "mono", "sarah-olive", "nia-charm"];
 
     const savedTheme = localStorage.getItem('theme-color');
     if (savedTheme && themes.includes(savedTheme)) {
         body.classList.add(savedTheme);
-
     }
 
     security.setTimebomb('2026-05-01T08:00:00Z')
@@ -175,7 +169,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (dataTitle) {
         document.title = dataTitle + ' - keyzarichi.org';
     }
-
-    
 })
 

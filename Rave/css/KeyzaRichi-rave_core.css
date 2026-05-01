@@ -198,8 +198,8 @@ body.high-contrast main {
 .scrollbar-track {
     border-radius: 50px;
     width: 8px;
-    background-color: var(--surface-color) !important;
     display: none;
+    background-color: var(--surface-color) !important;
     border-radius: 50px;
 }
 
@@ -615,29 +615,86 @@ i {
 
 dialog {
     background-color: var(--background-color);
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
     width: 800px;
     min-height: 280px;
     max-height: 100%;
-    padding: 1em 0;
+    padding: 0em 0;
     border: 1px solid rgba(100, 100, 100, 0.1);
     border-radius: 35px;
     animation: fadeIn .3s cubic-bezier(0.075, 0.82, 0.165, 1)
 }
 
-dialog[open],
-dialog:open {
-    display: flex;
+dialog[open] {
+    display: block;
 }
 
 dialog .dialog-header {
     display: flex;
-    justify-content: space-between;
     width: 100%;
+    position: sticky;
+    top: 0px;
+    right: 0px;   
+    z-index: 1;
+    justify-content: space-between;
     align-items: center;
-    padding: 14px 1.4em 2px 1.8em;
+    padding: 10px 2em 10px 2em;
+}
+.dialog-mintopbar {
+    opacity: 0;
+    transition: opacity .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.dialog-header.scrolled {
+    background-color: rgba(var(--bg-color-value), 0.95);
+    backdrop-filter: blur(12px);
+}
+.dialog-header.scrolled .dialog-mintopbar {
+    opacity: 1;
+}
+
+dialog .dialog-topbar {
+    margin: 2% 10px 2em 10px;
+}
+
+.dialog-topbar h1 {
+    font-family: Raleway, sans-serif;
+    font-size: 5rem !important;
+    font-weight: 500;
+}
+
+.side-panel .close-btn {
+    display: flex;
+    align-items: center;
+}
+.close-btn:hover {
+    cursor: pointer;
+    border: 1px solid rgba(100, 100, 100, 0.2) !important;
+}
+.close-btn span {
+    background-color: #707070;
+    width: 2px; height: 30px;
+    position: relative;
+}
+.close-btn .div-1 {
+    transform: rotate(45deg) translate(10px, 0px);
+    top: -10px;
+}
+.close-btn .div-2 {
+    transform: rotate(-45deg) translate(-10px, -0px);
+    top: -10px;
+}
+.dialog-header .btn {
+    padding: 5px 10px 0px 10px;
+    min-width: 50px;
+    height: 50px;
+    position: relative;
+    right: -10px;
+    max-height: auto;
+} 
+.dialog-header .btn span {
+    font-size: 4rem;
+    position: relative;
+    top: -8px;
 }
 
 .dialog-header h1 {
@@ -645,17 +702,21 @@ dialog .dialog-header {
 }
 
 dialog .content {
-    padding: 7px 1.5em 16px 1.5em;
+    padding: 0px 2em 16px 2em;
     width: 100%;
-    height: 100vh;
     overflow-y: auto;
-    overscroll-behavior-y: auto;
+}
+
+dialog .dialog-divider {
+    font-weight: 600;
+    padding-bottom: 10px;
+    letter-spacing: 0px;
+    border-bottom: 2px solid var(--tertiary-color);
+    margin: 20px 16px 20px 16px;
 }
 
 dialog .tab-panel {
-    width: 100%;
-   
-    
+    width: 100%; 
 }
 
 dialog h1 {
@@ -1152,7 +1213,7 @@ header.no-blend .equal div {
 }
 
 .header-container.scrolled {
-    padding: 12px 1.2em 12px 1.2em;
+    padding: 12px 1.0em 12px 1.0em;
 }
 
 .header-container.hide {
@@ -1723,11 +1784,12 @@ div {
 
 .section-header.stylish {
     width: 100%;
-    gap: 0px;
+    margin: 10px 0 10px 0;
 }
 .section-header.stylish .section-title {
-    width: 50%;
+    width: 55%;
     font-weight: 500;
+    margin: 0 20px 10px 20px;
     border-bottom: 2px solid var(--tertiary-color);
     font-size: 4.5rem;
     letter-spacing: .7px;
@@ -2126,7 +2188,7 @@ div {
 }
 
 .people .labelTag {
-    margin: 0px 20px 0px 20px;
+    display: none;
 }
 
 .card-btns {
@@ -2698,13 +2760,14 @@ div {
 
 .people-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    grid-auto-rows: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
+    grid-auto-rows: auto;
     grid-auto-flow: dense;
     justify-content: center;
     overflow: hidden;
-    padding: 20px 10px 0 10px;
-    gap: 1.4vw;
+    padding: 20px 10px 40px 26px;
+    column-gap: 2vw;
+    row-gap: 2.2vw;
 }
 
 
@@ -2712,12 +2775,11 @@ div {
     break-inside: avoid;
     position: relative;
     grid-column: span 1;
-    grid-row: span 22;
+    grid-row: span 20;
     overflow: hidden;
-    width: 420px;
+    width: 390px;
     transition: transform .7s cubic-bezier(0.175, 0.885, 0.32, 1.275), border .4s cubic-bezier(0.075, 0.82, 0.165, 1), opacity .4s cubic-bezier(0.215, 0.610, 0.355, 1), background-color .4s cubic-bezier(0.075, 0.82, 0.165, 1);
-    border: 1px solid transparent;
-    padding: 26px 10px;
+    padding: 10px 6px;
     pointer-events: auto;
 }
 
@@ -2725,93 +2787,20 @@ div {
     grid-column: span 27;
 }
 .people.span-2 {
-    margin-top: 3em;
-    grid-row: span 24;
-}
-
-
-.people:hover:not(:has(.visible)) {
-    border-color: transparent;
-}
-.people:hover {
-    border-color: var(--tertiary-color);
-}
-
-.people:focus, .people.focus {
-    border-color: var(--tertiary-color);
-    background-color: var(--surface-color);
-}
-
-
-.people.no-banner .people-banner {
-    display: none;
-}
-
-
-.people-banner {
-    background-color: rgba(100, 100, 100, 0.2);
-    width: 93%;
-    height: 200px;
-    border-radius: 34px;
-    background-size: 100%;
-    position: relative;
-    z-index: -1;
-    transition: height .7s cubic-bezier(0.075, 0.82, 0.165, 1);
-    margin: 12px 12px 0 12px;
-    opacity: 1;
-    background-repeat: no-repeat;
-    background-size: cover;
-    visibility: visible;
-    display: none;
-    background-image: url('/assets/image/banner/abstract.webp');
-}
-
-.people-banner:active {
-    height: 290px;
-}
-
-.people-banner:active~.people-bio .people-img {
-    opacity: 0;
-    transform: translateY(100px);
-}
-
-.people-banner:active~.people-bio {
-    transform: translateY(-135px);
-}
-
-.people-banner img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    object-position: center 12%;
-    border-radius: inherit;
-    transition: height .7s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.people-banner:has(img) {
-    background-image: none;
-}
-
-.people-banner.centered img {
-    object-position: center center;
-}
-
-.people-banner.centered-top img {
-    object-position: center 25%;
+    margin-top: 6em;
+    grid-row: span 23;
 }
 
 .people .people-img {
     object-fit: cover;
-    width: 90%;
-    height: 400px;
-    margin: 0;
-    margin: 5px 23px 8px 22px;
+    width: 380px;
+    height: 430px;
+    margin: 5px 0px 8px 0px;
     background: rgba(100, 100, 100, 0.05) url('/assets/logo/keyzarichi.org-200w.webp') no-repeat;
-    background-position: center center; 
-    border-radius: 36px;
+    background-position: center center;
 }
 
-.people:hover .people-img {
+.people:hover .people-img{
     transform: scale(1.02);
 }
 
@@ -2831,14 +2820,13 @@ div {
 .people .name {
     display: flex;
     flex-direction: row;
-    
     justify-content: space-between;
     align-items: center;
     column-gap: 20px;
     row-gap: 6px;
-    width: 90%;
+    width: 100%;
     transition: transform .5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    margin: 10px 0px 14px 21px;
+    margin: 0px 0px 14px 0px;
     padding-top: 10px;
     border-top: 1px solid var(--on-surface-color);
 }
@@ -2870,7 +2858,7 @@ div {
 
 .people .people-bio span {
     color: var(--primary-color);
-    font-weight: 450;
+    font-weight: 550;
     word-spacing: normal;
     font-size: 16px;
 }
@@ -3477,7 +3465,7 @@ details[open] .accordion-header::after {
     column-gap: 8px;
     width: 100%;
     transition: .4s;
-    padding: 12px 18px 12px 24px;
+    padding: 12px 14px 12px 14px;
     margin-bottom: 5px;
     border-radius: 40px;
     user-select: none;
@@ -4845,8 +4833,7 @@ button i,
     width: fit-content;
     height: 50px;
     align-items: center;
-    
-    left: -5px;
+    left: -8px;
 }
 
 header:has(.nav-pane:not(.hidden)) :is(.product, .logo) {
@@ -4886,10 +4873,6 @@ header:has(.nav-pane:not(.hidden)) .navigation {
     font-size: 14px;
     color: rgb(209, 209, 209);
     letter-spacing: 0.03em
-}
-
-.nav-pane .brand {
-    left: 5px
 }
 
 .navigation {
@@ -6155,23 +6138,16 @@ footer a:hover {
     .product {
         display: none;
     }
-    .people-container {
-        padding: 20px 0;
-        grid-auto-rows: unset;
-    }
-    .people {
-        grid-column: unset;
-        grid-row: unset;
-        padding: 26px 0px 26px 0px;
-        width: 100%;
-    }
-    .people .name {
-        margin: 10px 22px 10px 22px;
-    }
 }
 
 @media (max-width: 900px) {
+    .people {
+        grid-row: unset;
+        padding: 26px 10px 26px 10px;
+        width: 100%;
+    }
     .people-container {
+        padding: 0px 10px 26px 10px;
         grid-template-columns: repeat(1, 1fr);
     }
     .logo {
@@ -6183,17 +6159,19 @@ footer a:hover {
         grid-row: unset;
         margin-top: 0;
     }
+    .people .name {
+        width: 100%;
+    }
     .people .name h2 {
         font-size: 32px;
     }
     .people .people-img {
         height: 390px;
-        width: 320px;
-        margin: 10px 0px 8px 22px;
+        width: 340px;
     }
 
     .people .people-img img {
-        width: 320px;
+        width: 340px;
         height: 390px;
         object-position: center 17%;
     }
@@ -6327,7 +6305,6 @@ footer a:hover {
     dialog {
         min-width: 100%;
         width: 100%;
-        height: 100vh;
         border-radius: 0;
     }
 
@@ -6335,10 +6312,12 @@ footer a:hover {
         overflow: hidden;
     }
 
+    .dialog-header {
+        padding: 10px 1.6em !important;
+    }
+
     dialog .content {
         width: 100%;
-        min-width: 100%;
-        max-width: 100%;
         
     }
 
@@ -6433,9 +6412,6 @@ footer a:hover {
         text-align: left;
     }
 
-    .people .name h2 {
-        font-size: 23px;
-    }
     
     .timeline {
         padding: 20px 0px;
@@ -6459,11 +6435,25 @@ footer a:hover {
     }
     
     .section-header.stylish {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 0;
         width: auto;
+        margin: 0px 14px 0px 14px !important;
         
     }
     .section-header.stylish .section-title {
         width: auto;
+        border-bottom: none;
+        font-weight: 400;
+        margin: 0 4px !important;
+    }
+    .section-header.stylish :first-child {
+        padding-bottom: 0;
+    }
+    .section-header.stylish .section-title.right-align {
+        text-align: left;
     }
 
     .section-header.large .section-title {
@@ -6500,11 +6490,14 @@ footer a:hover {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 570px) {
+    .people {
+        width: 100%;
+    }
+    
     .people .people-img {
         height: 470px;
         width: 100%;
-        margin: 10px 0px 8px 22px !important;
     }
     
     .people .name h2 {
@@ -6519,7 +6512,7 @@ footer a:hover {
     }
 
     .people .people-img img {
-        width: 90%;
+        width: 100%;
         height: 470px;
         object-position: center 17%;
     }

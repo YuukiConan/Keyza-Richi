@@ -296,30 +296,24 @@ disableAnimation(dsbAnim);
         dialogAI.showModal();
     })
 
+    dialogAI.addEventListener('scroll', () => {
+        if (dialogAI.scrollTop >= 160) {
+            dialogAI.querySelector('.dialog-header').classList.add('scrolled');
+        } else {
+            dialogAI.querySelector('.dialog-header').classList.remove('scrolled');
+        }
+    })
+
+
     dialogClose1.addEventListener('click', () => {
         requestAnimationFrame(() => {
             dialogAI.style.animation = 'fadeOut .4s cubic-bezier(0.075, 0.82, 0.165, 1)';
             dialogAI.addEventListener('animationend', () => {
                 dialogAI.close();
                 dialogAI.style.animation = '';
+                dialogAI.scrollTop = 0;
             }, {once: true});
         })
-    })
-
-
-    const newPeopleCbx = document.getElementById('newCardCbx');
-    const newPeopleState = localStorage.getItem('newPeople') === 'true';
-    const peoples = document.querySelectorAll('.people');
-
-    peoples.forEach(card => {
-        card.classList.toggle('new', newPeopleState);
-        newPeopleCbx.checked = newPeopleState;
-
-        newPeopleCbx.addEventListener('change', () => {
-            const checked = newPeopleCbx.checked;
-            card.classList.toggle('new', checked);
-            localStorage.setItem('newPeople', checked);
-        });
     })
 
     const highContrastCbx = document.getElementById('contrastCbx');
@@ -425,7 +419,7 @@ if (inputsType.length > 0) {
     })
 }
 const panels = document.querySelectorAll('.panel');
-const themes = ["default", "mono", "amber-red", "nature-green", "crystal-blue", "purple-ruby", "choco-milk", "sarah-olive", "nia-charm"];
+const themes = ["default", "mono", "sarah-olive", "nia-charm"];
 
 const savedTheme = localStorage.getItem('theme-color');
 if (savedTheme && themes.includes(savedTheme)) {

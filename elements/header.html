@@ -2,138 +2,121 @@
 <button class="btn float-button" id="richi-ai-button" data-tooltip-key="floatMenu"><i class="uil uil-comments"></i><span>Talk to Richi</span></button>
 <dialog id="float-menu" data-lenis-prevent>
     <div class="dialog-header">
-        <div >
-            <h1>Settings</h1>
+        <div>
+            <h1 class="dialog-mintopbar">Settings</h1>
         </div>
         <div class="dialog-btns">
-            <button id="close2" class="btn accent">Close</button>
+            <button class="btn empty close-btn" id="close2"><span class="div-1"></span><span class="div-2"></span></button>
         </div>
     </div>
     <div class="content" id="content">
-        <div class="tab-container">
-            <div class="tab-buttons">
-                <button class="tab-button active" id="accessibility" onclick="showTab('accessibility')"><span>Aksesibilitas</span></button>
-                <button class="tab-button" id="experiment" onclick="showTab('experiment')"><span>Eksperimental</span></button>
-            </div>
-            <div class="tab-panel">
-                <div class="tab-content active" id="accessibility-tab">
-                    <div class="accordion-item">
-                        <h5 class="accordion-item-title">Kurangi animasi<br><span class="accordion-item-desc">Kurangi gerakan animasi dan transisi jika Anda sensitif dengan gerakan tertentu atau untuk meningkatkan performa web.</span></h5> 
-                        <label class="toggle">
-                            <input type="checkbox" class="toggleCheckbox" id="dsbAnimCbx" />
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                    <div class="accordion-item">
-                        <h5 class="accordion-item-title">Aktifkan kontras tinggi <span class="promo small">Beta</span></h5> 
-                        <label class="toggle">
-                            <input type="checkbox" class="toggleCheckbox" id="contrastCbx" />
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                    <div class="accordion-item">
-                        <h5 class="accordion-item-title">Font dyslexia <span class="promo small">Baru</span></h5> 
-                        <label class="toggle">
-                            <input type="checkbox" class="toggleCheckbox" id="dyslexiaCbx" />
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                    <div class="accordion-item block">
-                        <label for="btnRadius">Tingkat radius elemen</label>
-                        <input type="range" id="btnRadius" min="0" max="3" value="2" step="1" list="tickmarks" />
-                        <datalist id="tickmarks">
-                            <option value="0" label="0px"></option>
-                            <option value="1" label="8px"></option>
-                            <option value="2"  label="16px"></option>
-                            <option value="3"  label="50px"></option>
-                        </datalist>
-                    </div>
-                    <div class="accordion-item">
-                        <h5 class="accordion-item-title full">Rave Web Themer <br><span class="accordion-item-desc">Gunakan warna dinamis Web Themer untuk memperindah web berdasarkan warna aksen yang dipilih <br>
-                        <div class="color-template">
-                            <div class="flex">
-                                    <div class="panel selected" data-theme="default">
-                                        <h1>Gold Luxury</h1>
-                                        <div class="panel-image gold-luxury">
-                                            <div class="primary"></div>
-                                            <div class="secondary"></div>
-                                            <div class="tertiary"></div>
-                                        </div>
-                                        <p>Warna emas mewah yang lembut, merupakan warna default keyzarichi.org</p>
-                                    </div>
-                                    <div class="panel" data-theme="mono">
-                                        <h1>Mono <span class="promo small">Beta</span></h1>
-                                        <div class="panel-image mono">
-                                            <div class="primary"></div>
-                                            <div class="secondary"></div>
-                                            <div class="tertiary"></div>
-                                        </div>
-                                        <p>Warna monokrom (hitam dan putih) yang memberikan kesan minimalis dan modern untuk sebagian besar website.</p>
-                                    </div>
-                                    <div class="panel" data-theme="sarah-olive">
-                                        <h1>Sarah Olive</h1>
-                                        <div class="panel-image sarah-olive">
-                                            <div class="primary"></div>
-                                            <div class="secondary"></div>
-                                            <div class="tertiary"></div>
-                                        </div>
-                                        <p></p>
-                                    </div>
-                                    <div class="panel" data-theme="nia-charm">
-                                        <h1>Charm of Nia</h1>
-                                        <div class="panel-image nia-charm">
-                                            <div class="primary"></div>
-                                            <div class="secondary"></div>
-                                            <div class="tertiary"></div>
-                                        </div>
-                                        <p></p>
-                                    </div>
-                                
-                           
-                            </div>
-                            
+        <div class="dialog-topbar">
+            <h1>Settings</h1>
+        </div>
+        <h1 class="dialog-divider">Aksesibilitas</h1>
+        <div class="accordion-item">
+            <h5 class="accordion-item-title">Kurangi animasi<br><span class="accordion-item-desc">Kurangi gerakan animasi dan transisi jika Anda sensitif dengan gerakan tertentu atau untuk meningkatkan performa web.</span></h5> 
+            <label class="toggle">
+                <input type="checkbox" class="toggleCheckbox" id="dsbAnimCbx" />
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="accordion-item">
+            <h5 class="accordion-item-title">Aktifkan kontras tinggi</h5> 
+            <label class="toggle">
+                <input type="checkbox" class="toggleCheckbox" id="contrastCbx" />
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="accordion-item">
+            <h5 class="accordion-item-title">Font dyslexia</h5> 
+            <label class="toggle">
+                <input type="checkbox" class="toggleCheckbox" id="dyslexiaCbx" />
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="accordion-item block">
+            <label for="btnRadius">Tingkat radius elemen</label>
+            <input type="range" id="btnRadius" min="0" max="3" value="2" step="1" list="tickmarks" />
+            <datalist id="tickmarks">
+                <option value="0" label="0px"></option>
+                <option value="1" label="8px"></option>
+                <option value="2"  label="16px"></option>
+                <option value="3"  label="50px"></option>
+            </datalist>
+        </div>
+        <div class="accordion-item">
+            <h5 class="accordion-item-title full">Rave Web Themer <br><span class="accordion-item-desc">Gunakan warna dinamis Web Themer untuk memperindah web berdasarkan warna aksen yang dipilih <br>
+            <div class="color-template">
+                <div class="flex">
+                    <div class="panel selected" data-theme="default">
+                        <h1>Gold Luxury</h1>
+                        <div class="panel-image gold-luxury">
+                            <div class="primary"></div>
+                            <div class="secondary"></div>
+                            <div class="tertiary"></div>
                         </div>
+                        <p>Warna emas mewah yang lembut, merupakan warna default keyzarichi.org</p>
                     </div>
-                    <div class="accordion-item">
-                        <h5 class="accordion-item-title">Netralkan warna<br><span class="accordion-item-desc">Jika Anda merasa warna palet terlalu mencolok untuk web, Anda dapat menetralkan warna agar tetap fokus pada konten web (contoh: menonaktifkan warna permukaan)</span></h5> 
-                        <label class="toggle">
-                              <input type="checkbox" class="toggleCheckbox" id="netralize" />
-                              <span class="slider"></span>
-                        </label>
+                    <div class="panel" data-theme="mono">
+                        <h1>Mono <span class="promo small">Beta</span></h1>
+                        <div class="panel-image mono">
+                            <div class="primary"></div>
+                            <div class="secondary"></div>
+                            <div class="tertiary"></div>
+                        </div>
+                        <p>Warna monokrom (hitam dan putih) yang memberikan kesan minimalis dan modern untuk sebagian besar website.</p>
                     </div>
-                    <div class="accordion-item">
-                         <h5 class="accordion-item-title">Ganti warna teks berdasarkan luminansi latar belakang</h5> 
-                         <label class="toggle">
-                              <input type="checkbox" class="toggleCheckbox" id="luminance" />
-                              <span class="slider"></span>
-                         </label>
+                    <div class="panel" data-theme="sarah-olive">
+                        <h1>Sarah Olive</h1>
+                        <div class="panel-image sarah-olive">
+                            <div class="primary"></div>
+                            <div class="secondary"></div>
+                            <div class="tertiary"></div>
+                        </div>
+                        <p></p>
                     </div>
-                    <div class="accordion-item">
-                         <h5 class="accordion-item-title">Switch tema terang/gelap berdasarkan zona waktu.</h5> 
-                          <label class="toggle">
-                              <input type="checkbox" class="toggleCheckbox" id="useDaylightModeCbx" />
-                              <span class="slider"></span>
-                         </label>
-                    </div>
-                </div>
-                <div class="tab-content" id="experiment-tab">
-                    <div class="accordion-item hidden">
-                        <h5 class="accordion-item-title">Hilangkan banner pada PeopleCard </h5> 
-                        <label class="toggle">
-                            <input type="checkbox" class="toggleCheckbox" id="newCardCbx" />
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                    <div class="accordion-item">
-                        <h5 class="accordion-item-title">Mode Minimalist<br><span class="accordion-item-desc">Gunakan warna monokrom dan desain web yang minimalis.</span></h5> 
-                        <label class="toggle">
-                            <input type="checkbox" class="toggleCheckbox" id="monochromeCbx" />
-                            <span class="slider"></span>
-                        </label>
+                    <div class="panel" data-theme="nia-charm">
+                        <h1>Charm of Nia</h1>
+                        <div class="panel-image nia-charm">
+                            <div class="primary"></div>
+                            <div class="secondary"></div>
+                            <div class="tertiary"></div>
+                        </div>
+                        <p></p>
                     </div>
                 </div>
                 
             </div>
+        </div>
+        <div class="accordion-item">
+            <h5 class="accordion-item-title">Netralkan warna<br><span class="accordion-item-desc">Jika Anda merasa warna palet terlalu mencolok untuk web, Anda dapat menetralkan warna agar tetap fokus pada konten web (contoh: menonaktifkan warna permukaan)</span></h5> 
+            <label class="toggle">
+                    <input type="checkbox" class="toggleCheckbox" id="netralize" />
+                    <span class="slider"></span>
+            </label>
+        </div>
+        <div class="accordion-item">
+            <h5 class="accordion-item-title">Ganti warna teks berdasarkan luminansi latar belakang</h5> 
+            <label class="toggle">
+                <input type="checkbox" class="toggleCheckbox" id="luminance" />
+                <span class="slider"></span>
+            </label>
+        </div>
+        <h1 class="dialog-divider">Eksperimental</h1>
+        <div class="accordion-item">
+            <h5 class="accordion-item-title">Switch tema terang/gelap berdasarkan zona waktu.</h5> 
+            <label class="toggle">
+                <input type="checkbox" class="toggleCheckbox" id="useDaylightModeCbx" />
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="accordion-item">
+            <h5 class="accordion-item-title">Mode Minimalist<br><span class="accordion-item-desc">Gunakan warna monokrom dan desain web yang minimalis.</span></h5> 
+            <label class="toggle">
+                <input type="checkbox" class="toggleCheckbox" id="monochromeCbx" />
+                <span class="slider"></span>
+            </label>
         </div>
     </div>
     
