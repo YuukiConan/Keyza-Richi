@@ -110,7 +110,7 @@
 @font-face {
     font-family: "Open Sans";
     src: url("./fonts/OpenSans-VariableFont.woff2") format('woff2'),
-    url("/Keyza Richi/fonts/OpenSans-VariableFont.woff2") format('woff2'); /* fix sementara */
+    url("/Keyza-Richi/fonts/OpenSans-VariableFont.woff2") format('woff2'); /* fix sementara */
     font-display: swap;
 }
 
