@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.add(savedTheme);
     }
 
-    security.setTimebomb('2026-05-01T08:00:00Z')
+    // security.setTimebomb('2026-05-01T08:00:00Z')
 
 
     // Initialize the elements on the page.
