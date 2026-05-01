@@ -1,6 +1,6 @@
 # Keyza Richi
 ![Status](https://img.shields.io/badge/status-active-black)
-![Version](https://img.shields.io/badge/version-2026-white)
+![Version](https://img.shields.io/badge/version-KR1.30-white)
 ![Made with](https://img.shields.io/badge/Made%20with-HTML%20CSS%20JS-lightgrey)
 
 <div align="center">
