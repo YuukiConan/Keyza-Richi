@@ -72,7 +72,7 @@ a {
 }
 .section-header.stylish .section-title {
     opacity: 0;
-    transform: translateX(-120px);
+    transform: translateY(-120px);
     transition: transform .6s cubic-bezier(0.075, 0.82, 0.165, 1), opacity .6s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 /* 
